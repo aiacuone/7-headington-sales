@@ -106,6 +106,7 @@ const ItemDetails: FC<{
                     {capitalizeFirstLetter(key)}:
                   </p>
                   <p className="text-left">
+                    {/* @ts-ignore */}
                     {keySuffix[key] ? keySuffix[key](value) : value}
                   </p>
                 </div>
