@@ -62,7 +62,7 @@ const ItemCard: FC<{ item: Item }> = ({ item }) => {
 const ItemDetails: FC<{
   item: Item
 }> = ({ item }) => {
-  const { details, link, height, width, brand, price, litres } = item
+  const { details, link, price } = item
 
   const mappingDetails = Object.fromEntries(
     Object.entries(item).filter(([key]) => {
@@ -74,41 +74,45 @@ const ItemDetails: FC<{
         'isInduction',
         'link',
         'name',
+        'details',
       ].includes(key)
     })
   )
+
   return (
     <div className="stack gap-3 flex-1">
       <ul className="w-full">
-        {Object.entries(mappingDetails).map(([key, value], index) => {
-          if (!value && key !== 'price') return
+        {Object.entries({ ...mappingDetails, price }).map(
+          ([key, value], index) => {
+            if (!value && key !== 'price') return
 
-          const keySuffix = {
-            price: (value: number) =>
-              value ? (
-                `£${value}`
-              ) : (
-                <p className="bg-blue-500 rounded-sm text-secondary px-4">
-                  Free
-                </p>
-              ),
-            width: (value: number) => `${value}mm`,
-            height: (value: number) => `${value}mm`,
+            const keySuffix = {
+              price: (value: number) =>
+                value ? (
+                  `£${value}`
+                ) : (
+                  <p className="bg-blue-500 rounded-sm text-secondary px-4">
+                    Free
+                  </p>
+                ),
+              width: (value: number) => `${value}mm`,
+              height: (value: number) => `${value}mm`,
+            }
+
+            return (
+              <li key={`item ${index}`}>
+                <div className="hstack gap-2">
+                  <p className="font-bold text-left">
+                    {capitalizeFirstLetter(key)}:
+                  </p>
+                  <p className="text-left">
+                    {keySuffix[key] ? keySuffix[key](value) : value}
+                  </p>
+                </div>
+              </li>
+            )
           }
-
-          return (
-            <li key={`item ${index}`}>
-              <div className="hstack gap-2">
-                <p className="font-bold text-left">
-                  {capitalizeFirstLetter(key)}:
-                </p>
-                <p className="text-left">
-                  {keySuffix[key] ? keySuffix[key](value) : value}
-                </p>
-              </div>
-            </li>
-          )
-        })}
+        )}
       </ul>
       {details && <p className="text-left">{details}</p>}
       {link && (
