@@ -103,7 +103,7 @@ export const items: Item[] = [
   },
   {
     name: 'Pull up bar',
-    images: s3Urls(['pull-up-bar1', 'pull-up-bar2']),
+    images: s3Urls(['pullup-bar1', 'pullup-bar2']),
     category: Category.fitness,
     brand: 'Hakeno',
     price: 40,
@@ -173,7 +173,7 @@ export const items: Item[] = [
   },
   {
     name: 'Henry Vacuum',
-    images: s3Urls(['']),
+    images: s3Urls(['vacuum1', 'vacuum2']),
     category: Category.other,
     model: 'HVR-200-22',
     link: 'https://www.henryvacuumcleaner.com/red-henry-hvr200-22.php',
@@ -182,7 +182,7 @@ export const items: Item[] = [
   },
   {
     name: 'Kettle',
-    images: s3Urls(['vacuum1', 'vacuum2']),
+    images: s3Urls(['kettle']),
     category: Category.kitchen,
     brand: 'Russel Hobbs',
     model: 20071,
