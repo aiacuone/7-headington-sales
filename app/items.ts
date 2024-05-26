@@ -1,4 +1,4 @@
-enum Category {
+export enum Category {
   kitchen = 'kitchen',
   bedroom = 'bedroom',
   office = 'office',

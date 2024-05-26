@@ -14,6 +14,8 @@ import {
 } from '@/components/ui/drawer'
 import { useRouter } from 'next/navigation'
 import { FC } from 'react'
+import { capitalizeFirstLetter } from '@/lib/utils'
+import { Category } from '@/app/items'
 
 export const Footer = () => {
   const { isOpen, onClose, toggle } = useDisclosure()
@@ -56,6 +58,14 @@ const FooterDrawer: FC<FooterDrawerProps> = ({ isOpen, onClose }) => {
           </div>
         </DrawerHeader>
         <DrawerFooter className="center">
+          {Object.values(Category).map((category) => (
+            <Button
+              key={category}
+              onClick={() => onClickLink(`/#${category}`)}
+              className="w-[200px]">
+              {capitalizeFirstLetter(category)}
+            </Button>
+          ))}
           <DrawerClose>
             <div className="hstack gap-3">
               <Button variant="outline" onClick={onClose}>
