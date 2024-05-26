@@ -111,6 +111,7 @@ export const items: Item[] = [
     isDelayedSale: true,
     brand: 'Russel Hobbs',
     model: 24080,
+    price: 10,
   },
   {
     name: 'Bin',
@@ -123,8 +124,8 @@ export const items: Item[] = [
     isDelayedSale: true,
     brand: 'Panasonic',
     model: 'NN-CT56JB',
+    price: 50,
   },
-
   {
     name: 'Water Filter',
     category: Category.kitchen,

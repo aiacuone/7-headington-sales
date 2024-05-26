@@ -16,21 +16,23 @@
 - air mattress
 - pull up bar
 - desk chair
-- toaster!
+- toaster
 - bin!
-- microwave!
-- kettle!
+- microwave
+- kettle
 - water filter!
-- pots!
-- pans!
-- kitchen materials!
-- vacuum!
-- kettle!
-- coffee grinder!
-- hand mixer!
+- medium pot
+- pot set
+- wide pan
+- medium pot
+- Always pan
+- vacuum
+- kettle
+- coffee grinder
+- hand mixer
 - coffee!
 - remaining boxes!
 - condiments!
-- box of glasses!
-- cerave creams!
-- pot and pan divider!
+- box of glasses
+- cerave creams
+- pot and pan divider
