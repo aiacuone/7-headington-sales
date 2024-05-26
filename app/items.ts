@@ -12,7 +12,7 @@ export interface Item {
   brand?: string
   category: Category
   price?: number
-  // images: string[]
+  images: string[]
   isSold?: boolean
   isDelayedSale?: boolean
   height?: number
@@ -24,15 +24,23 @@ export interface Item {
   link?: string
 }
 
+const s3Urls = (items: string[]) =>
+  items.map(
+    (item) =>
+      `https://7-headington-sales.s3.eu-west-2.amazonaws.com/${item}.jpg`
+  )
+
 export const items: Item[] = [
   {
     category: Category.other,
     name: 'Fan',
+    images: s3Urls(['fan']),
     brand: 'Signature',
     model: 'S40008',
   },
   {
     name: 'Butane Torch',
+    images: s3Urls(['butane1', 'butane2', 'butane3', 'butane4']),
     category: Category.other,
     brand: 'Dremel',
     description:
@@ -40,6 +48,7 @@ export const items: Item[] = [
   },
   {
     name: 'Cot',
+    images: s3Urls(['cot1', 'cot2', 'cot3', 'cot4', 'cot5', 'cot6']),
     category: Category.baby,
     brand: 'Tutti Bambini',
     model: 'Rio',
@@ -48,6 +57,7 @@ export const items: Item[] = [
   },
   {
     name: 'Dumbells',
+    images: s3Urls(['dumbells1', 'dumbells2']),
     category: Category.fitness,
     brand: 'Body Sculpture',
     model: 'BW108T',
@@ -56,39 +66,35 @@ export const items: Item[] = [
   },
   {
     name: 'Baby Rocker',
+    images: s3Urls(['rocker1', 'rocker2']),
     category: Category.baby,
   },
   {
     name: 'Flip down ironing Board',
+    images: s3Urls(['ironing-board1', 'ironing-board2']),
     category: Category.other,
     brand: 'Dunelm',
     price: 15,
   },
   {
     name: 'Camping Chairs',
+    images: s3Urls(['camping-chairs1', 'camping-chairs2', 'camping-chairs3']),
     category: Category.other,
     price: 10,
   },
   {
     name: 'Trolley',
+    images: s3Urls(['trolley1', 'trolley2']),
     category: Category.other,
   },
   {
     name: 'Foot Rest',
+    images: s3Urls(['foot-rest1', 'foot-rest2']),
     category: Category.other,
-  },
-  {
-    name: 'Crown Lever',
-    category: Category.other,
-    brand: 'Crown',
-  },
-  {
-    name: 'Sanwa Lever',
-    category: Category.other,
-    brand: 'Sanwa',
   },
   {
     name: 'Air Mattress',
+    images: s3Urls(['air-mattress1', 'air-mattress2', 'air-mattress3']),
     category: Category.bedroom,
     brand: 'Intext',
     model: 'AP620A',
@@ -97,16 +103,19 @@ export const items: Item[] = [
   },
   {
     name: 'Pull up bar',
+    images: s3Urls(['pull-up-bar1', 'pull-up-bar2']),
     category: Category.fitness,
     brand: 'Hakeno',
     price: 40,
   },
   {
     name: 'Desk Chair',
+    images: s3Urls(['chair1', 'chair2', 'chair3', 'chair4']),
     category: Category.office,
   },
   {
     name: 'Toaster',
+    images: s3Urls(['toaster1', 'toaster2']),
     category: Category.kitchen,
     isDelayedSale: true,
     brand: 'Russel Hobbs',
@@ -115,11 +124,13 @@ export const items: Item[] = [
   },
   {
     name: 'Bin',
+    images: s3Urls(['']),
     category: Category.other,
     isDelayedSale: true,
   },
   {
     name: 'Microwave/Oven',
+    images: s3Urls(['microwave1', 'microwave2']),
     category: Category.kitchen,
     isDelayedSale: true,
     brand: 'Panasonic',
@@ -128,21 +139,25 @@ export const items: Item[] = [
   },
   {
     name: 'Water Filter',
+    images: s3Urls(['']),
     category: Category.kitchen,
     isDelayedSale: true,
   },
   {
     name: 'Pot Set',
+    images: s3Urls(['pot-set1', 'pot-set2', 'pot-set3', 'pot-set4']),
     category: Category.kitchen,
   },
   {
     name: 'Always Pan',
+    images: s3Urls(['always-pan1', 'always-pan2', 'always-pan3']),
     category: Category.kitchen,
     isInduction: true,
     width: 280,
   },
   {
     name: 'Wide Pan',
+    images: s3Urls(['wide-pan1', 'wide-pan2', 'wide-pan3']),
     category: Category.kitchen,
     isInduction: true,
     width: 300,
@@ -150,6 +165,7 @@ export const items: Item[] = [
   },
   {
     name: 'Medium Pot',
+    images: s3Urls(['medium-pot1', 'medium-pot2', 'medium-pot3']),
     category: Category.kitchen,
     brand: 'Circulon',
     isInduction: true,
@@ -157,6 +173,7 @@ export const items: Item[] = [
   },
   {
     name: 'Henry Vacuum',
+    images: s3Urls(['']),
     category: Category.other,
     model: 'HVR-200-22',
     link: 'https://www.henryvacuumcleaner.com/red-henry-hvr200-22.php',
@@ -165,12 +182,14 @@ export const items: Item[] = [
   },
   {
     name: 'Kettle',
+    images: s3Urls(['vacuum1', 'vacuum2']),
     category: Category.kitchen,
     brand: 'Russel Hobbs',
     model: 20071,
   },
   {
     name: 'Coffee Grinder',
+    images: s3Urls(['coffee-grinder1', 'coffee-grinder2']),
     category: Category.kitchen,
     brand: 'Cuisinart',
     model: 'SG21U',
@@ -179,26 +198,31 @@ export const items: Item[] = [
   },
   {
     name: 'Hand Mixer',
+    images: s3Urls(['hand-mixer']),
     category: Category.kitchen,
     brand: 'Kenwood',
     model: 'HMP30',
   },
-  {
-    name: 'Coffee',
-    category: Category.kitchen,
-    brand: 'Lavazza',
-    description: '1KG',
-  },
-  {
-    name: 'Cardboard Boxes',
-    category: Category.other,
-  },
-  {
-    name: 'Condiments',
-    category: Category.kitchen,
-  },
+  // {
+  //   name: 'Coffee',
+  //   images: s3Urls(['']),
+  //   category: Category.kitchen,
+  //   brand: 'Lavazza',
+  //   description: '1KG',
+  // },
+  // {
+  //   name: 'Cardboard Boxes',
+  //   images: s3Urls(['']),
+  //   category: Category.other,
+  // },
+  // {
+  //   name: 'Condiments',
+  //   images: s3Urls(['']),
+  //   category: Category.kitchen,
+  // },
   {
     name: 'Box of glasses',
+    images: s3Urls(['glasses1', 'glasses2']),
     category: Category.kitchen,
     brand: 'Crystalia',
     model: 'Washington Collection',
@@ -206,6 +230,7 @@ export const items: Item[] = [
   },
   {
     name: 'Moisturiser',
+    images: s3Urls(['moisturiser']),
     category: Category.other,
     brand: 'CeraVe',
     litres: 1,
@@ -213,6 +238,7 @@ export const items: Item[] = [
   },
   {
     name: 'Cleanser',
+    images: s3Urls(['cleanser']),
     category: Category.other,
     brand: 'CeraVe',
     litres: 1,
@@ -220,6 +246,7 @@ export const items: Item[] = [
   },
   {
     name: 'Pot and pan divider',
+    images: s3Urls(['pot-divider']),
     category: Category.kitchen,
     brand: 'Puricon',
     link: 'https://www.amazon.co.uk/gp/product/B093315R74/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1',
