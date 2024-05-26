@@ -1,6 +1,27 @@
+'use client'
+
 import { Item } from '@/app/items'
 import Image from 'next/image'
 import { FC } from 'react'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog'
+import Link from 'next/link'
+import { capitalizeFirstLetter } from '@/lib/utils'
+import { useDisclosure } from '@/lib/hooks'
+import { Button } from './button'
 
 interface ItemGridProps {
   items: Item[]
@@ -17,17 +38,127 @@ export const ItemGrid: FC<ItemGridProps> = ({ items }) => {
 }
 
 const ItemCard: FC<{ item: Item }> = ({ item }) => {
+  const { onOpen, isOpen, toggle } = useDisclosure()
+
   return (
-    <div className="flex flex-col items-center">
-      <p>{item.name}</p>
-      <Image
-        src={item.images[0]}
-        alt={item.name}
-        className="rounded-sm"
-        width={300}
-        height={300}
-      />
-      <p>{item.price}</p>
+    <>
+      <button className="stack bg-muted p-3 gap-1" onClick={onOpen}>
+        <p className="font-bold text-lg">{item.name}</p>
+        <Image
+          src={item.images[0]}
+          alt={item.name}
+          className="rounded-sm"
+          width={300}
+          height={300}
+        />
+        <ItemDetails item={item} />
+        <Button className="w-full">View</Button>
+      </button>
+      <CardDialog open={isOpen} onOpenChange={toggle} item={item} />
+    </>
+  )
+}
+
+const ItemDetails: FC<{
+  item: Item
+}> = ({ item }) => {
+  const { details, link, height, width, brand, price } = item
+  const mappingDetails = {
+    price,
+    brand,
+    height,
+    width,
+  }
+  return (
+    <div className="stack gap-3 flex-1">
+      <ul className="w-full">
+        {Object.entries(mappingDetails).map(([key, value], index) => {
+          if (!value && key !== 'price') return
+
+          const keySuffix = {
+            price: (value: number) =>
+              value ? (
+                `£${value}`
+              ) : (
+                <p className="bg-blue-500 rounded-sm text-secondary px-4">
+                  Free
+                </p>
+              ),
+            width: (value: number) => `${value}mm`,
+            height: (value: number) => `${value}mm`,
+          }
+
+          return (
+            <li key={`item ${index}`}>
+              <div className="hstack gap-2">
+                <p className="font-bold text-left">
+                  {capitalizeFirstLetter(key)}:
+                </p>
+                <p className="text-left">
+                  {keySuffix[key] ? keySuffix[key](value) : value}
+                </p>
+              </div>
+            </li>
+          )
+        })}
+      </ul>
+      {details && <p className="text-left">{details}</p>}
+      {link && (
+        <Link href={link} target="_blank" className="text-left">
+          Link
+        </Link>
+      )}
+    </div>
+  )
+}
+
+interface CardDialogProps {
+  open: boolean
+  onOpenChange: () => void
+  item: Item
+}
+
+const CardDialog: FC<CardDialogProps> = ({ open, onOpenChange, item }) => {
+  const { images, name } = item
+  const showCarousel = images.length > 1
+
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="w-full sm:w-[500px]">
+        <DialogHeader>
+          <DialogTitle>{name}</DialogTitle>
+          <DialogDescription>
+            {showCarousel ? (
+              <Carousel>
+                <CarouselContent>
+                  {images.map((imageSource, index) => (
+                    <CarouselItem
+                      key={`carousel image ${index}`}
+                      className="center">
+                      <DialogImage src={imageSource} />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+            ) : (
+              <DialogImage src={images[0]} />
+            )}
+          </DialogDescription>
+        </DialogHeader>
+        <DialogFooter>
+          <ItemDetails item={item} />
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  )
+}
+
+const DialogImage: FC<{ src: string }> = ({ src }) => {
+  return (
+    <div className="center">
+      <Image src={src} alt={'House Item Image'} width={500} height={300} />
     </div>
   )
 }

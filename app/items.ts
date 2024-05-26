@@ -20,7 +20,7 @@ export interface Item {
   isInduction?: boolean
   litres?: number
   model?: string | number
-  description?: string
+  details?: string
   link?: string
 }
 
@@ -43,7 +43,7 @@ export const items: Item[] = [
     images: s3Urls(['butane1', 'butane2', 'butane3', 'butane4']),
     category: Category.other,
     brand: 'Dremel',
-    description:
+    details:
       'Dremel versatip butane gas torch. Comes with a bottle of butane around 1/4-1/2 left. Works as expected',
   },
   {
@@ -53,7 +53,7 @@ export const items: Item[] = [
     brand: 'Tutti Bambini',
     model: 'Rio',
     price: 140,
-    description: 'NEVER used, plastic still on mattress',
+    details: 'NEVER used, plastic still on mattress',
   },
   {
     name: 'Dumbells',
@@ -61,7 +61,7 @@ export const items: Item[] = [
     category: Category.fitness,
     brand: 'Body Sculpture',
     model: 'BW108T',
-    description: '1.5KG, 3KG & 5KG. 50 pound on amazon',
+    details: '1.5KG, 3KG & 5KG. 50 pound on amazon',
     price: 15,
   },
   {
@@ -98,7 +98,7 @@ export const items: Item[] = [
     category: Category.bedroom,
     brand: 'Intext',
     model: 'AP620A',
-    description:
+    details:
       'Please note, this air mattress deflates faster than normal. Electric, inflates and deflates electrically. Good for emergency situations',
   },
   {
@@ -193,7 +193,7 @@ export const items: Item[] = [
     category: Category.kitchen,
     brand: 'Cuisinart',
     model: 'SG21U',
-    description: 'Has a spare container',
+    details: 'Has a spare container',
     price: 15,
   },
   {
@@ -208,7 +208,7 @@ export const items: Item[] = [
   //   images: s3Urls(['']),
   //   category: Category.kitchen,
   //   brand: 'Lavazza',
-  //   description: '1KG',
+  //   details: '1KG',
   // },
   // {
   //   name: 'Cardboard Boxes',
@@ -226,7 +226,7 @@ export const items: Item[] = [
     category: Category.kitchen,
     brand: 'Crystalia',
     model: 'Washington Collection',
-    description: '6x Whiskey glasses',
+    details: '6x Whiskey glasses',
   },
   {
     name: 'Moisturiser',
@@ -234,7 +234,7 @@ export const items: Item[] = [
     category: Category.other,
     brand: 'CeraVe',
     litres: 1,
-    description: 'Majority is left',
+    details: 'Majority is left',
   },
   {
     name: 'Cleanser',
@@ -242,7 +242,7 @@ export const items: Item[] = [
     category: Category.other,
     brand: 'CeraVe',
     litres: 1,
-    description: 'Majority is left',
+    details: 'Majority is left',
   },
   {
     name: 'Pot and pan divider',
