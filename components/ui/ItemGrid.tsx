@@ -62,13 +62,21 @@ const ItemCard: FC<{ item: Item }> = ({ item }) => {
 const ItemDetails: FC<{
   item: Item
 }> = ({ item }) => {
-  const { details, link, height, width, brand, price } = item
-  const mappingDetails = {
-    price,
-    brand,
-    height,
-    width,
-  }
+  const { details, link, height, width, brand, price, litres } = item
+
+  const mappingDetails = Object.fromEntries(
+    Object.entries(item).filter(([key]) => {
+      return ![
+        'category',
+        'images',
+        'isSold',
+        'isDelayedSale',
+        'isInduction',
+        'link',
+        'name',
+      ].includes(key)
+    })
+  )
   return (
     <div className="stack gap-3 flex-1">
       <ul className="w-full">

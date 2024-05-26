@@ -2,9 +2,9 @@ export enum Category {
   kitchen = 'kitchen',
   bedroom = 'bedroom',
   office = 'office',
-  other = 'other',
   baby = 'baby',
   fitness = 'fitness',
+  other = 'other',
 }
 
 export interface Item {
@@ -45,6 +45,7 @@ export const items: Item[] = [
     brand: 'Dremel',
     details:
       'Dremel versatip butane gas torch. Comes with a bottle of butane around 1/4-1/2 left. Works as expected',
+    price: 25,
   },
   {
     name: 'Cot',
@@ -147,6 +148,7 @@ export const items: Item[] = [
     name: 'Pot Set',
     images: s3Urls(['pot-set1', 'pot-set2', 'pot-set3', 'pot-set4']),
     category: Category.kitchen,
+    price: 15,
   },
   {
     name: 'Always Pan',
@@ -154,6 +156,8 @@ export const items: Item[] = [
     category: Category.kitchen,
     isInduction: true,
     width: 280,
+    price: 50,
+    details: 'Very good condition, rarely used',
   },
   {
     name: 'Wide Pan',
@@ -233,7 +237,6 @@ export const items: Item[] = [
     images: s3Urls(['moisturiser']),
     category: Category.other,
     brand: 'CeraVe',
-    litres: 1,
     details: 'Majority is left',
   },
   {
@@ -241,7 +244,6 @@ export const items: Item[] = [
     images: s3Urls(['cleanser']),
     category: Category.other,
     brand: 'CeraVe',
-    litres: 1,
     details: 'Majority is left',
   },
   {
