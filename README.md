@@ -56,8 +56,6 @@ hang blender
 To do:
 
 - Order the list items in card
-- Add delayed sale warning when using email link
-- Add email link with subject and body pre filled
 - Water filter image
 - Remaining boxes images
 - Vacuum bags images
