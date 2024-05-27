@@ -36,10 +36,14 @@ export const DelayedSaleDialog: FC<DelayedSaleDialogProps> = ({
         </DialogHeader>
         <DialogFooter>
           <div className="stack gap-5">
-            <p>
-              This is a delayed sale. This means that you can purchase/reserve
-              this item, but it will be available July 1st
-            </p>
+            <div className="stack gap-3">
+              <p>This is a delayed sale</p>
+              <p>
+                This means that you can purchase/reserve this item, but it will
+                be available around <b>July 1st</b>
+              </p>
+              <p>Please contact me to confirm the sale to reserve the item</p>
+            </div>
             <div className="center">
               {showConfirmButton && (
                 <Button className="self-start" onClick={onConfirm}>

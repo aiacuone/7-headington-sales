@@ -59,8 +59,8 @@ export const ItemDetails: FC<ItemDetailsProps> = ({ item, onOpen }) => {
 
   return (
     <>
-      <div className="stack gap-3 flex-1">
-        <ul className="w-full flex-1">
+      <div className="stack gap-3 h-full w-full">
+        <ul className="w-full">
           {Object.entries(mappingDetails).map(([key, value], index) => {
             const keySuffix = {
               width: (value: number) => `${value}mm`,
@@ -83,8 +83,8 @@ export const ItemDetails: FC<ItemDetailsProps> = ({ item, onOpen }) => {
             )
           })}
         </ul>
-        <div className="flex-1 w-full" />
         {details && <p className="text-left text-sm">{details}</p>}
+        <div className="flex-1 w-full" />
         <div className="stack gap-1">
           <div className="hstack gap-1">
             {showMoreDetails && (

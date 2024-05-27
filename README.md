@@ -36,6 +36,7 @@
 - pot and pan divider
 - bin
 - water filter
+- cake holder
 
 always pan
 
@@ -65,3 +66,7 @@ To do:
 - Oven trays item and images
 - Hand mixer kneeder images
 - Condiments photos
+
+items to confirm with Dip:
+
+- Cake holder

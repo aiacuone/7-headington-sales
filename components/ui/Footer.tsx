@@ -84,14 +84,11 @@ const FooterDrawer: FC<FooterDrawerProps> = ({
           ))}
           <DrawerClose>
             <div className="hstack gap-3">
-              <Button variant="outline" onClick={onClose}>
-                Close
-              </Button>
-              <Button variant="outline" onClick={() => onClickLink('/')}>
-                <Home />
-              </Button>
               <Button onClick={onOpenQrDialog} variant="outline">
                 <QrCode />
+              </Button>
+              <Button variant="outline" onClick={onClose}>
+                Close
               </Button>
             </div>
           </DrawerClose>

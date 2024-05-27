@@ -55,12 +55,6 @@ const ItemCard: FC<{ item: Item; onOpenDelayedSaleDialog: () => void }> = ({
           </p>
         )}
         <button onClick={onOpen} className="center relative">
-          <p
-            className={`absolute bg-white text-4xl text-black rounded-sm p-3 font-bold ${
-              isSold ? 'flex' : 'hidden'
-            }`}>
-            SOLD
-          </p>
           <Image
             src={images[0]}
             alt={name}
@@ -68,6 +62,12 @@ const ItemCard: FC<{ item: Item; onOpenDelayedSaleDialog: () => void }> = ({
             width={300}
             height={300}
           />
+          <p
+            className={`absolute bg-white text-4xl text-black rounded-sm p-3 font-bold ${
+              isSold ? 'flex' : 'hidden'
+            }`}>
+            SOLD
+          </p>
         </button>
         {isDelayedSale && (
           <button

@@ -23,13 +23,14 @@ export const QrCodeDialog: FC<QrCodeDialogProps> = ({ open, toggle }) => {
           <DialogDescription></DialogDescription>
         </DialogHeader>
         <DialogFooter>
-          <div className="center w-full">
+          <div className="center w-full stack">
             <Image
               src="https://7-headington-sales.s3.eu-west-2.amazonaws.com/qrcode.jpeg"
               alt="QR Code Image"
               height={300}
               width={300}
             />
+            <p>https://7-headington-sales.netlify.app/</p>
           </div>
         </DialogFooter>
       </DialogContent>
