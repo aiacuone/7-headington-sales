@@ -99,7 +99,7 @@ export const ItemDetails: FC<ItemDetailsProps> = ({ item, onOpen }) => {
             )}
           </div>
           <Button className="bg-muted-foreground" onClick={onPurchase}>
-            Purchase
+            Contact
           </Button>
         </div>
       </div>

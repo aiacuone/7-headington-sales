@@ -43,7 +43,7 @@ export const items: Item[] = [
     link: 'https://www.amazon.co.uk/gp/product/B07MWDL5N6/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1',
   },
   {
-    name: 'Butane Torch',
+    name: 'Dremel Butane Torch',
     images: s3Urls(['butane1', 'butane2', 'butane3', 'butane4']),
     category: Category.other,
     brand: 'Dremel',
@@ -53,7 +53,7 @@ export const items: Item[] = [
     link: 'https://www.screwfix.com/p/dremel-versatip-butane-gas-torch/1596d',
   },
   {
-    name: 'Cot',
+    name: 'Tutti Bambini Cot',
     images: s3Urls(['cot1', 'cot2', 'cot3', 'cot4', 'cot5', 'cot6']),
     category: Category.baby,
     brand: 'Tutti Bambini',
@@ -87,7 +87,7 @@ export const items: Item[] = [
     link: 'https://www.dunelm.com/product/flip-down-ironing-board-over-the-door-1000187473?defaultSkuId=30734653&utm_source=google&utm_medium=cpc&utm_campaign=Utility_Ironing+Boards_%5BGOO-PLA+PSB-HOMEHYGIENE-IRONINGBOARD%5D&gad_source=1&gclid=Cj0KCQjw3tCyBhDBARIsAEY0XNkfkMHsae1VOrknzMLYcf4J3Ngx1Fx-GxfRy1UfwSPcSFT10G7L2P4aAtmGEALw_wcB&gclsrc=aw.ds',
   },
   {
-    name: 'Camping Chairs',
+    name: 'Highlander Camping Chairs',
     brand: 'Highlander',
     images: s3Urls(['camping-chairs1', 'camping-chairs2', 'camping-chairs3']),
     category: Category.other,
@@ -111,7 +111,7 @@ export const items: Item[] = [
     category: Category.other,
   },
   {
-    name: 'Air Mattress',
+    name: 'Intext Air Mattress',
     images: s3Urls(['air-mattress1', 'air-mattress2', 'air-mattress3']),
     category: Category.bedroom,
     brand: 'Intext',
@@ -121,7 +121,7 @@ export const items: Item[] = [
     link: 'https://www.argos.co.uk/product/8884967?clickPR=plp:2:5',
   },
   {
-    name: 'Pull up bar',
+    name: 'Hakeno Pull up bar',
     images: s3Urls(['pullup-bar1', 'pullup-bar2']),
     category: Category.fitness,
     brand: 'Hakeno',
@@ -139,7 +139,7 @@ export const items: Item[] = [
       'Very good condition. Note, to lift seat up, you need to manually pull the seat up rather than pull lever',
   },
   {
-    name: 'Toaster',
+    name: 'Russell Hobbs Toaster',
     images: s3Urls(['toaster1', 'toaster2']),
     category: Category.kitchen,
     isDelayedSale: true,
@@ -157,7 +157,7 @@ export const items: Item[] = [
     isDelayedSale: true,
   },
   {
-    name: 'Combination Microwave Oven',
+    name: 'Panasonic Combination Microwave Oven',
     images: s3Urls(['microwave1', 'microwave2']),
     category: Category.kitchen,
     isDelayedSale: true,
@@ -220,16 +220,16 @@ export const items: Item[] = [
     details: '1200W. Comes with multiple attachments and bags',
   },
   {
-    name: 'Kettle',
+    name: 'Russell Hobbs Kettle',
     images: s3Urls(['kettle']),
     category: Category.kitchen,
-    brand: 'Russel Hobbs',
+    brand: 'Russell Hobbs',
     model: 20071,
     link: 'https://www.amazon.co.uk/Russell-Hobbs-Cambridge-Kettle-20071/dp/B00D3K79O4',
     isDelayedSale: true,
   },
   {
-    name: 'Hand Mixer',
+    name: 'Kenwood Hand Mixer',
     images: s3Urls(['hand-mixer']),
     category: Category.kitchen,
     brand: 'Kenwood',

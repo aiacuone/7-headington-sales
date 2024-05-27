@@ -26,11 +26,16 @@ export const IntroDialog: FC<IntroDialogProps> = ({ open, toggle }) => {
         </DialogHeader>
         <DialogFooter>
           <div className="stack gap-5">
-            <p>
-              We are moving abroad and will be selling a variety of items from
-              our home. Please feel free to browse the items and contact us if
-              you are interested in a purchase.
-            </p>
+            <div className="stack gap-2">
+              <p>
+                We are moving abroad and will be selling a variety of items from
+                our home.
+              </p>
+              <p>
+                Please feel free to browse the items and contact us if you are
+                interested in a purchase.
+              </p>
+            </div>
             <div className="center">
               <Button onClick={toggle}>Continue</Button>
             </div>

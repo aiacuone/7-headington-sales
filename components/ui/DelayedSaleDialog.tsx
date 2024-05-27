@@ -38,7 +38,7 @@ export const DelayedSaleDialog: FC<DelayedSaleDialogProps> = ({
           <div className="stack gap-5">
             <p>
               This is a delayed sale. This means that you can purchase/reserve
-              this item, but it will be avaiable July 1st
+              this item, but it will be available July 1st
             </p>
             <div className="center">
               {showConfirmButton && (

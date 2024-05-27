@@ -1,6 +1,6 @@
 'use client'
 
-import { Home, Menu } from 'lucide-react'
+import { Home, Menu, QrCode } from 'lucide-react'
 import { Button } from './button'
 import { useDisclosure } from '@/lib/hooks'
 import {
@@ -16,9 +16,15 @@ import { useRouter } from 'next/navigation'
 import { FC } from 'react'
 import { capitalizeFirstLetter } from '@/lib/utils'
 import { Category } from '@/app/items'
+import { QrCodeDialog } from './QrCodeDialog'
 
 export const Footer = () => {
   const { isOpen, onClose, toggle } = useDisclosure()
+  const {
+    toggle: toggledQrDialog,
+    isOpen: isQrDialogOpen,
+    onOpen: onOpenQrDialog,
+  } = useDisclosure()
 
   return (
     <>
@@ -29,7 +35,12 @@ export const Footer = () => {
           </Button>
         </div>
       </div>
-      <FooterDrawer isOpen={isOpen} onClose={onClose} />
+      <FooterDrawer
+        isOpen={isOpen}
+        onClose={onClose}
+        onOpenQrDialog={onOpenQrDialog}
+      />
+      <QrCodeDialog toggle={toggledQrDialog} open={isQrDialogOpen} />
     </>
   )
 }
@@ -37,9 +48,14 @@ export const Footer = () => {
 interface FooterDrawerProps {
   isOpen: boolean
   onClose: () => void
+  onOpenQrDialog: () => void
 }
 
-const FooterDrawer: FC<FooterDrawerProps> = ({ isOpen, onClose }) => {
+const FooterDrawer: FC<FooterDrawerProps> = ({
+  isOpen,
+  onClose,
+  onOpenQrDialog,
+}) => {
   const { push } = useRouter()
 
   const onClickLink = (href: string) => {
@@ -73,6 +89,9 @@ const FooterDrawer: FC<FooterDrawerProps> = ({ isOpen, onClose }) => {
               </Button>
               <Button variant="outline" onClick={() => onClickLink('/')}>
                 <Home />
+              </Button>
+              <Button onClick={onOpenQrDialog} variant="outline">
+                <QrCode />
               </Button>
             </div>
           </DrawerClose>
