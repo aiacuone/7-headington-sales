@@ -23,7 +23,7 @@
 - pot set
 - wide pan
 - medium pot
-- Always pan
+- Always pan set
 - vacuum
 - kettle
 - coffee grinder
@@ -34,17 +34,8 @@
 - box of glasses
 - cerave creams
 - pot and pan divider
-
-photos remaining:
-
-- condiments
-- remaining boxes
+- bin
 - water filter
-- vacuum bags
-- vacuum attachments
-- always pan pot
-- always pan steamer
-- oven trays
 
 always pan
 
@@ -61,3 +52,18 @@ egg pot
 hang blender
 
 - has a kneed
+
+To do:
+
+- Order the list items in card
+- Add delayed sale warning when using email link
+- Add email link with subject and body pre filled
+- Water filter image
+- Remaining boxes images
+- Vacuum bags images
+- Vacuum attachments images
+- Always pan pot images
+- Always pan steamer images
+- Oven trays item and images
+- Hand mixer kneeder images
+- Condiments photos

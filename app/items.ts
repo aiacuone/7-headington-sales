@@ -125,7 +125,7 @@ export const items: Item[] = [
     images: s3Urls(['pullup-bar1', 'pullup-bar2']),
     category: Category.fitness,
     brand: 'Hakeno',
-    price: 30,
+    price: 25,
     details:
       'Very good condition, rarely used. £45 on Amazon. Hangs on to frame of door, supports a very large amount of weight',
     link: 'https://www.amazon.co.uk/gp/product/B08CX8534T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1',
@@ -166,7 +166,8 @@ export const items: Item[] = [
     price: 50,
     watts: 1000,
     link: 'https://www.panasonic.com/uk/consumer/home-appliances/microwaves/combination-microwaves/nn-ct56jbbpq.html',
-    details: 'Both microwave and oven. Very good condition. Around 1 year old',
+    details:
+      '£250 new. Combination microwave/oven. Very good condition. Around 1 year old',
   },
   {
     name: 'Water Filter',
@@ -225,6 +226,7 @@ export const items: Item[] = [
     brand: 'Russel Hobbs',
     model: 20071,
     link: 'https://www.amazon.co.uk/Russell-Hobbs-Cambridge-Kettle-20071/dp/B00D3K79O4',
+    isDelayedSale: true,
   },
   {
     name: 'Hand Mixer',
