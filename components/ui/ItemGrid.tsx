@@ -51,7 +51,7 @@ const ItemCard: FC<{ item: Item }> = ({ item }) => {
             Free
           </p>
         )}
-        <button onClick={onOpen}>
+        <button onClick={onOpen} className="center">
           <Image
             src={item.images[0]}
             alt={item.name}
@@ -121,7 +121,7 @@ const ItemDetails: FC<{
       {details && <p className="text-left text-sm">{details}</p>}
       {showMoreDetails && (
         <Button className="w-full" onClick={onOpen}>
-          More Details
+          View
         </Button>
       )}
       {link && (

@@ -44,6 +44,7 @@ photos remaining:
 - vacuum attachments
 - always pan pot
 - always pan steamer
+- oven trays
 
 always pan
 
@@ -56,3 +57,7 @@ always pan
 egg pot
 
 - egg pot goes with circulon
+
+hang blender
+
+- has a kneed

@@ -39,6 +39,8 @@ export const items: Item[] = [
     images: s3Urls(['fan']),
     brand: 'Signature',
     model: 'S40008',
+    details: '£15 on Amazon',
+    link: 'https://www.amazon.co.uk/gp/product/B07MWDL5N6/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1',
   },
   {
     name: 'Butane Torch',
@@ -231,6 +233,7 @@ export const items: Item[] = [
     brand: 'Kenwood',
     model: 'HMP30',
     link: 'https://www.kenwoodworld.com/en-gb/hand-mixer-white-hmp30-a0wh/p/HMP30.A0WH',
+    price: 10,
   },
   // {
   //   name: 'Coffee',
