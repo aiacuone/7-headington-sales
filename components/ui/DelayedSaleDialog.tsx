@@ -42,7 +42,7 @@ export const DelayedSaleDialog: FC<DelayedSaleDialogProps> = ({
                 This means that you can purchase/reserve this item, but it will
                 be available around <b>June 30th</b>
               </p>
-              <p>Please contact me to confirm the sale to reserve the item</p>
+              <p>Inquire to confirm the sale to reserve the item</p>
             </div>
             <div className="center">
               {showConfirmButton && (

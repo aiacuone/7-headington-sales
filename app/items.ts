@@ -298,12 +298,6 @@ export const items: Item[] = [
     price: 5,
   },
   {
-    name: 'London Dish',
-    category: Category.other,
-    images: s3Urls(['tray1', 'tray2']),
-    details: 'Pefect for holding keys, coins, etc',
-  },
-  {
     name: 'Perfect Pot',
     category: Category.kitchen,
     brand: 'Our Place',
