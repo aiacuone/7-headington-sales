@@ -42,18 +42,26 @@ const ItemCard: FC<{ item: Item }> = ({ item }) => {
 
   return (
     <>
-      <button className="stack bg-muted p-3 gap-1" onClick={onOpen}>
+      <div className="stack bg-muted p-3 gap-1">
         <p className="font-bold text-lg">{item.name}</p>
-        <Image
-          src={item.images[0]}
-          alt={item.name}
-          className="rounded-sm"
-          width={300}
-          height={300}
-        />
-        <ItemDetails item={item} />
-        <Button className="w-full">View</Button>
-      </button>
+        {item.price ? (
+          <p className="text-lg">{`£${item.price}`}</p>
+        ) : (
+          <p className="bg-blue-500 rounded-sm text-secondary px-4 self-start">
+            Free
+          </p>
+        )}
+        <button onClick={onOpen}>
+          <Image
+            src={item.images[0]}
+            alt={item.name}
+            className="rounded-sm"
+            width={300}
+            height={300}
+          />
+        </button>
+        <ItemDetails item={item} onOpen={onOpen} />
+      </div>
       <CardDialog open={isOpen} onOpenChange={toggle} item={item} />
     </>
   )
@@ -61,12 +69,14 @@ const ItemCard: FC<{ item: Item }> = ({ item }) => {
 
 const ItemDetails: FC<{
   item: Item
-}> = ({ item }) => {
-  const { details, link, price } = item
+  onOpen?: () => void
+}> = ({ item, onOpen }) => {
+  const { details, link } = item
+  const showMoreDetails = !!onOpen
 
   const mappingDetails = Object.fromEntries(
     Object.entries(item).filter(([key]) => {
-      return ![
+      const excludeKeys = [
         'category',
         'images',
         'isSold',
@@ -75,50 +85,48 @@ const ItemDetails: FC<{
         'link',
         'name',
         'details',
-      ].includes(key)
+        'price',
+      ]
+
+      return !excludeKeys.includes(key)
     })
   )
 
   return (
     <div className="stack gap-3 flex-1">
-      <ul className="w-full">
-        {Object.entries({ ...mappingDetails, price }).map(
-          ([key, value], index) => {
-            if (!value && key !== 'price') return
-
-            const keySuffix = {
-              price: (value: number) =>
-                value ? (
-                  `£${value}`
-                ) : (
-                  <p className="bg-blue-500 rounded-sm text-secondary px-4">
-                    Free
-                  </p>
-                ),
-              width: (value: number) => `${value}mm`,
-              height: (value: number) => `${value}mm`,
-            }
-
-            return (
-              <li key={`item ${index}`}>
-                <div className="hstack gap-2">
-                  <p className="font-bold text-left">
-                    {capitalizeFirstLetter(key)}:
-                  </p>
-                  <p className="text-left">
-                    {/* @ts-ignore */}
-                    {keySuffix[key] ? keySuffix[key](value) : value}
-                  </p>
-                </div>
-              </li>
-            )
+      <ul className="w-full flex-1">
+        {Object.entries(mappingDetails).map(([key, value], index) => {
+          const keySuffix = {
+            width: (value: number) => `${value}mm`,
+            height: (value: number) => `${value}mm`,
+            watts: (value: number) => `${value}W`,
           }
-        )}
+
+          return (
+            <li key={`item ${index}`}>
+              <div className="hstack gap-2">
+                <p className="font-bold text-left">
+                  {capitalizeFirstLetter(key)}:
+                </p>
+                <p className="text-left">
+                  {/* @ts-ignore */}
+                  {keySuffix[key] ? keySuffix[key](value) : value}
+                </p>
+              </div>
+            </li>
+          )
+        })}
       </ul>
-      {details && <p className="text-left">{details}</p>}
+      <div className="flex-1 w-full" />
+      {details && <p className="text-left text-sm">{details}</p>}
+      {showMoreDetails && (
+        <Button className="w-full" onClick={onOpen}>
+          More Details
+        </Button>
+      )}
       {link && (
-        <Link href={link} target="_blank" className="text-left">
-          Link
+        <Link href={link} target="_blank" className="w-full">
+          <Button className="w-full bg-muted-foreground">Link</Button>
         </Link>
       )}
     </div>

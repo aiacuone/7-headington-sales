@@ -1,7 +1,5 @@
 \*Items to sell
 
-!= no photos
-
 - fan
 - butane torch
 - cot
@@ -20,7 +18,7 @@
 - bin!
 - microwave
 - kettle
-- water filter!
+- water filter
 - medium pot
 - pot set
 - wide pan
@@ -31,8 +29,30 @@
 - coffee grinder
 - hand mixer
 - coffee!
-- remaining boxes!
-- condiments!
+- remaining boxes
+- condiments
 - box of glasses
 - cerave creams
 - pot and pan divider
+
+photos remaining:
+
+- condiments
+- remaining boxes
+- water filter
+- vacuum bags
+- vacuum attachments
+- always pan pot
+- always pan steamer
+
+always pan
+
+- Has a steamer (metal basket)
+- Has a plate that goes into the pot, is a rubber plate
+- both are in the cupboard closest to the sink
+- put the set together
+- may want to put to 70
+
+egg pot
+
+- egg pot goes with circulon
