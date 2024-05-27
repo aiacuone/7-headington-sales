@@ -40,14 +40,14 @@ export const DelayedSaleDialog: FC<DelayedSaleDialogProps> = ({
               <p>This is a delayed sale</p>
               <p>
                 This means that you can purchase/reserve this item, but it will
-                be available around <b>July 1st</b>
+                be available around <b>June 30th</b>
               </p>
               <p>Please contact me to confirm the sale to reserve the item</p>
             </div>
             <div className="center">
               {showConfirmButton && (
                 <Button className="self-start" onClick={onConfirm}>
-                  I understand
+                  Inquire
                 </Button>
               )}
             </div>

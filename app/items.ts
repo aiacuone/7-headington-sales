@@ -109,6 +109,7 @@ export const items: Item[] = [
     name: 'Foot Rest',
     images: s3Urls(['foot-rest1', 'foot-rest2']),
     category: Category.other,
+    details: 'Has a lid that opens up for storage',
   },
   {
     name: 'Intext Air Mattress',

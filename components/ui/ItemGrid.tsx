@@ -79,7 +79,7 @@ const ItemCard: FC<{ item: Item; onOpenDelayedSaleDialog: () => void }> = ({
         )}
         <ItemDetails item={item} onOpen={onOpen} />
       </div>
-      <CardDialog open={isOpen} onOpenChange={toggle} item={item} />
+      <CardDialog open={isOpen} toggle={toggle} item={item} />
     </>
   )
 }

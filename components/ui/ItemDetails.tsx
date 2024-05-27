@@ -10,9 +10,14 @@ import { useRouter } from 'next/navigation'
 interface ItemDetailsProps {
   item: Item
   onOpen?: () => void
+  toggleDialog?: () => void
 }
 
-export const ItemDetails: FC<ItemDetailsProps> = ({ item, onOpen }) => {
+export const ItemDetails: FC<ItemDetailsProps> = ({
+  item,
+  onOpen,
+  toggleDialog,
+}) => {
   const { details, link, isSold } = item
   const showMoreDetails = !!onOpen
   const {
@@ -57,6 +62,8 @@ export const ItemDetails: FC<ItemDetailsProps> = ({ item, onOpen }) => {
     onCloseConfirmDelayedSale()
   }
 
+  const showCloseButton = !!toggleDialog
+
   return (
     <>
       <div className="stack gap-3 h-full w-full">
@@ -98,9 +105,16 @@ export const ItemDetails: FC<ItemDetailsProps> = ({ item, onOpen }) => {
               </Link>
             )}
           </div>
-          <Button className="bg-muted-foreground" onClick={onPurchase}>
-            Contact
-          </Button>
+          <div className="hstack gap-1">
+            <Button className="bg-muted-foreground w-full" onClick={onPurchase}>
+              Inquire
+            </Button>
+            {showCloseButton && (
+              <Button onClick={toggleDialog} className="w-full">
+                Close
+              </Button>
+            )}
+          </div>
         </div>
       </div>
       <DelayedSaleDialog

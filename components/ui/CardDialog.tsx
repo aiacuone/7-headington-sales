@@ -20,20 +20,16 @@ import Image from 'next/image'
 
 interface CardDialogProps {
   open: boolean
-  onOpenChange: () => void
+  toggle: () => void
   item: Item
 }
 
-export const CardDialog: FC<CardDialogProps> = ({
-  open,
-  onOpenChange,
-  item,
-}) => {
+export const CardDialog: FC<CardDialogProps> = ({ open, toggle, item }) => {
   const { images, name } = item
   const showCarousel = images.length > 1
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog open={open} onOpenChange={toggle}>
       <DialogContent className="w-full sm:w-[500px]">
         <DialogHeader>
           <DialogTitle>{name}</DialogTitle>
@@ -58,7 +54,7 @@ export const CardDialog: FC<CardDialogProps> = ({
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
-          <ItemDetails item={item} />
+          <ItemDetails item={item} toggleDialog={toggle} />
         </DialogFooter>
       </DialogContent>
     </Dialog>
