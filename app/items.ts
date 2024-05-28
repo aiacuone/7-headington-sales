@@ -197,7 +197,7 @@ export const items: Item[] = [
     width: 280,
     price: 70,
     details:
-      'Contains Always Pot 2.0, Perfect Pot and Tagine. Very good condition, rarely used',
+      'Contains Always Pot 2.0, Perfect Pot. Very good condition, rarely used',
     link: 'https://fromourplace.co.uk/products/always-essential-cooking-pan?variant=42608736993457',
   },
   {
@@ -312,5 +312,17 @@ export const items: Item[] = [
       'Very good condition, rarely used. Comes with Perfect Pot Roast Rack',
     link: 'https://fromourplace.co.uk/products/mini-perfect-pot?variant=42001175052465',
     price: 50,
+  },
+  {
+    name: 'Circulon Pot',
+    category: Category.kitchen,
+    brand: 'Circulon',
+    images: s3Urls(['circulon-pot1', 'circulon-pot2', 'circulon-pot3']),
+    litres: 1.9,
+  },
+  {
+    name: 'Wok',
+    category: Category.kitchen,
+    images: s3Urls(['wok1', 'wok2']),
   },
 ]

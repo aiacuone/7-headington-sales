@@ -26,9 +26,11 @@ export const Header = () => {
             <p>7 Headington Rd</p>
           </div>
           <div className="flex-1 center gap-3">
-            <p className="text-xl font-bold">House Clearance Sale</p>
+            <p className="text-xl font-bold w-full text-right sm:text-center">
+              House Clearance Sale
+            </p>
           </div>
-          <div className="hstack gap-3">
+          <div className="gap-3 hidden sm:flex">
             <Button onClick={onOpenIntroDialog}>
               <Info />
             </Button>
