@@ -158,7 +158,6 @@ export const items: Item[] = [
     name: 'Russell Hobbs Toaster',
     images: s3Urls(['toaster1', 'toaster2']),
     category: Category.kitchen,
-    isDelayedSale: true,
     brand: 'Russel Hobbs',
     model: 24080,
     price: 10,
