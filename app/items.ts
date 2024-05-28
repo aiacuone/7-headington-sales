@@ -60,6 +60,7 @@ export const items: Item[] = [
     model: 'Rio',
     price: 140,
     details: 'NEVER used, plastic still on mattress',
+    link: 'https://www.tuttibambini.com/rio-cot-bed-with-cot-top-changer-mattress-slate-oak.html',
   },
   {
     name: 'Dumbells',
@@ -132,12 +133,14 @@ export const items: Item[] = [
     link: 'https://www.amazon.co.uk/gp/product/B08CX8534T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1',
   },
   {
-    name: 'Desk Chair',
+    name: 'Yaheetech Desk Chair',
+    brand: 'Yaheetech',
     images: s3Urls(['chair1', 'chair2', 'chair3', 'chair4']),
     category: Category.office,
     price: 15,
     details:
       'Very good condition. Note, to lift seat up, you need to manually pull the seat up rather than pull lever',
+    link: 'https://www.amazon.co.uk/gp/product/B08D9HKS9L/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1',
   },
   {
     name: 'Russell Hobbs Toaster',
@@ -175,12 +178,14 @@ export const items: Item[] = [
       '£250 new. Combination microwave/oven. Very good condition. Around 1 year old',
   },
   {
-    name: 'Water Filter',
+    name: 'Brita Water Filter',
+    brand: 'Brita',
     images: s3Urls(['water-filter1', 'water-filter2', 'water-filter3']),
     category: Category.kitchen,
     isDelayedSale: true,
     details:
-      'Note, there are cracks in the plastic, but it is heigher than the water level, so it will not leak.',
+      '£40 on Amazon. Note, there are cracks in the plastic, but it is heigher than the water level, so it will not leak.',
+    link: 'https://www.amazon.co.uk/gp/product/B07DWV14T8/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1',
   },
   {
     name: 'Pot Set',
@@ -267,7 +272,7 @@ export const items: Item[] = [
   // },
   {
     name: 'Box of glasses',
-    images: s3Urls(['glasses1', 'glasses2']),
+    images: s3Urls(['glasses2', 'glasses1']),
     category: Category.kitchen,
     brand: 'Crystalia',
     model: 'Washington Collection',
@@ -280,7 +285,7 @@ export const items: Item[] = [
     category: Category.kitchen,
     brand: 'Puricon',
     link: 'https://www.amazon.co.uk/gp/product/B093315R74/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1',
-    details: 'Sits in pot/pan drawer or cupboard to divide',
+    details: '£16 on Amazon. Sits in pot/pan drawer or cupboard to divide',
   },
   {
     name: 'Baking Trays',
@@ -292,9 +297,9 @@ export const items: Item[] = [
     name: 'Mastertop Cake Stand',
     brand: 'Mastertop',
     category: Category.kitchen,
-    images: s3Urls(['cake-holder1', 'cake-holder2']),
+    images: s3Urls(['cake-holder1', 'cake-holder2', 'cake-holder3']),
     link: 'https://www.amazon.co.uk/gp/product/B07SBCP5HX/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1',
-    details: '£23 on Amazon',
+    details: '£23 on Amazon. Very good condition, rarely used',
     price: 5,
   },
   {
@@ -310,7 +315,7 @@ export const items: Item[] = [
     ]),
     details:
       'Very good condition, rarely used. Comes with Perfect Pot Roast Rack',
-    link: 'https://fromourplace.co.uk/products/mini-perfect-pot?variant=42001175052465',
+    link: 'https://fromourplace.co.uk/products/perfect-pot?variant=40485861884081',
     price: 50,
   },
   {

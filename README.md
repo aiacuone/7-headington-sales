@@ -37,14 +37,8 @@
 - bin
 - water filter
 - cake holder
-
-always pan
-
-- Has a steamer (metal basket)
-- Has a plate that goes into the pot, is a rubber plate
-- both are in the cupboard closest to the sink
-- put the set together
-- may want to put to 70
+- circulon pot
+- wok
 
 To do:
 
@@ -52,3 +46,8 @@ To do:
 - Remaining boxes images
 - Vacuum attachments images
 - Condiments photos
+
+testing checklist:
+
+- images
+- links
