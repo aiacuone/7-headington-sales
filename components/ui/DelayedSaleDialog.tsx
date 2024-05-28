@@ -47,7 +47,7 @@ export const DelayedSaleDialog: FC<DelayedSaleDialogProps> = ({
             <div className="center">
               {showConfirmButton && (
                 <Button className="self-start" onClick={onConfirm}>
-                  Inquire
+                  Inquire Delayed Sale
                 </Button>
               )}
             </div>

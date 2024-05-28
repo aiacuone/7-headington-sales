@@ -190,7 +190,7 @@ export const items: Item[] = [
   },
   {
     name: 'Always Pan 2.0',
-    images: s3Urls(['always-pan1', 'always-pan2', 'always-pan3']),
+    images: s3Urls(['always-pan1v2', 'always-pan2v2', 'always-pan3v2']),
     category: Category.kitchen,
     brand: 'Our Place',
     hob: 'Induction',

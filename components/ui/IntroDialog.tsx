@@ -39,6 +39,8 @@ export const IntroDialog: FC<IntroDialogProps> = ({ open, toggle }) => {
               </p>
               <p>
                 This house clearance will officially end on the <b>June 30th</b>
+                . We will be moving abroad and will not be able to sell items
+                after this date.
               </p>
               <p>
                 New items are likely to be added daily, so be sure to check back

@@ -46,27 +46,9 @@ always pan
 - put the set together
 - may want to put to 70
 
-egg pot
-
-- egg pot goes with circulon
-
-hang blender
-
-- has a kneed
-
 To do:
 
 - Order the list items in card
-- Water filter image
 - Remaining boxes images
-- Vacuum bags images
 - Vacuum attachments images
-- Always pan pot images
-- Always pan steamer images
-- Oven trays item and images
-- Hand mixer kneeder images
 - Condiments photos
-
-items to confirm with Dip:
-
-- Cake holder
