@@ -29,8 +29,8 @@ export interface Item {
   link?: string
   watts?: number
   reservations?: Reservation[]
+  depth?: number
 }
-;``
 
 const s3Urls = (items: string[]) =>
   items.map(
@@ -118,6 +118,10 @@ export const items: Item[] = [
     images: s3Urls(['foot-rest1', 'foot-rest2']),
     category: Category.other,
     details: 'Has a lid that opens up for storage',
+    //35 108 50
+    height: 50,
+    width: 108,
+    depth: 35,
   },
   {
     name: 'Intext Air Mattress',
@@ -175,6 +179,10 @@ export const items: Item[] = [
       {
         name: 'Geraldine',
         contact: 'geraldineojo@ymail.com',
+      },
+      {
+        name: 'Sarah Brookes',
+        contact: 'sarahbrookes2022@gmail.com',
       },
     ],
     link: 'https://www.simplehuman.co.uk/products/rectangular-liner-pocket-step-can-plastic-45l?variant=32718183694441',
@@ -318,6 +326,7 @@ export const items: Item[] = [
     brand: 'Puricon',
     link: 'https://www.amazon.co.uk/gp/product/B093315R74/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1',
     details: '£16 on Amazon. Sits in pot/pan drawer or cupboard to divide',
+    isSold: true,
   },
   {
     name: 'Baking Trays',

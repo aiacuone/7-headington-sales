@@ -72,6 +72,7 @@ export const ItemDetails: FC<ItemDetailsProps> = ({
             const keySuffix = {
               width: (width: number) => `${width}mm`,
               height: (height: number) => `${height}mm`,
+              depth: (height: number) => `${height}mm`,
               watts: (watts: number) => `${watts}W`,
               reservations: (reservations: Reservation[]) =>
                 `${reservations.length}`,
