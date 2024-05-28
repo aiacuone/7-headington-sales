@@ -78,6 +78,7 @@ export const items: Item[] = [
     details: '1.5KG, 3KG & 5KG. £45 on Amazon',
     price: 15,
     link: 'https://www.amazon.co.uk/Body-Sculpture-BW108T-Dumbbell-Included/dp/B075GP91GK',
+    isSold: true,
   },
   {
     name: 'Baby Rocker',
@@ -103,6 +104,7 @@ export const items: Item[] = [
     details:
       'Very good condition, used once. £27 EACH on Amazon. One of the bags is missing',
     link: 'https://www.amazon.co.uk/gp/product/B00BIBBDHO/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1',
+    isSold: true,
   },
   {
     name: 'Hoppa Lightweight Shopping Trolley',
@@ -118,10 +120,10 @@ export const items: Item[] = [
     images: s3Urls(['foot-rest1', 'foot-rest2']),
     category: Category.other,
     details: 'Has a lid that opens up for storage',
-    //35 108 50
-    height: 50,
-    width: 108,
-    depth: 35,
+    height: 500,
+    width: 1080,
+    depth: 350,
+    isSold: true,
   },
   {
     name: 'Intext Air Mattress',
@@ -180,8 +182,8 @@ export const items: Item[] = [
         contact: 'geraldineojo@ymail.com',
       },
       {
-        name: 'Sarah Brookes',
-        contact: 'sarahbrookes2022@gmail.com',
+        name: 'Sarah',
+        contact: '07951842703',
       },
     ],
     link: 'https://www.simplehuman.co.uk/products/rectangular-liner-pocket-step-can-plastic-45l?variant=32718183694441',
@@ -198,6 +200,12 @@ export const items: Item[] = [
     link: 'https://www.panasonic.com/uk/consumer/home-appliances/microwaves/combination-microwaves/nn-ct56jbbpq.html',
     details:
       '£250 new. Combination microwave/oven. Very good condition. Around 1 year old',
+    reservations: [
+      {
+        name: 'Sarah',
+        contact: '07951842703',
+      },
+    ],
   },
   {
     name: 'Brita Water Filter',
@@ -214,6 +222,7 @@ export const items: Item[] = [
     images: s3Urls(['pot-set1', 'pot-set2', 'pot-set3', 'pot-set4']),
     category: Category.kitchen,
     price: 15,
+    isSold: true,
   },
   {
     name: 'Always Pan 2.0',
@@ -245,6 +254,7 @@ export const items: Item[] = [
     brand: 'Circulon',
     hob: 'Induction',
     litres: 3.8,
+    isSold: true,
   },
   {
     name: 'Henry Vacuum',
@@ -260,6 +270,10 @@ export const items: Item[] = [
       {
         name: 'Sarah Brookes',
         contact: 'sarahbrookes2022@gmail.com',
+      },
+      {
+        name: 'Sarah',
+        contact: '07951842703',
       },
     ],
   },
@@ -280,6 +294,10 @@ export const items: Item[] = [
         name: 'Geraldine',
         contact: 'geraldineolusolaojo@yahoo.co.uk',
       },
+      {
+        name: 'Sarah',
+        contact: '07951842703',
+      },
     ],
   },
   {
@@ -291,6 +309,7 @@ export const items: Item[] = [
     link: 'https://www.kenwoodworld.com/en-gb/hand-mixer-white-hmp30-a0wh/p/HMP30.A0WH',
     price: 10,
     details: 'Comes with both mixer and knead attachments',
+    isSold: true,
   },
   // {
   //   name: 'Coffee',
@@ -364,10 +383,12 @@ export const items: Item[] = [
     brand: 'Circulon',
     images: s3Urls(['circulon-pot1', 'circulon-pot2', 'circulon-pot3']),
     litres: 1.9,
+    isSold: true,
   },
   {
     name: 'Wok',
     category: Category.kitchen,
     images: s3Urls(['wok1', 'wok2']),
+    isSold: true,
   },
 ]

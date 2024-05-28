@@ -41,9 +41,9 @@ export const Footer = () => {
 
   return (
     <>
-      <div className="p-2 bg-muted center h-[70px]">
-        <div className="w-full center max-w-screen-lg">
-          <div className="flex-1 hstack gap-2">
+      <div className="p-3 bg-muted center h-[70px]">
+        <div className="w-full center max-w-screen-lg text-sm">
+          <div className="flex-1 hstack gap-1">
             <p>
               <b>{numberOfItemsReserved}</b>/{numberOfDelayedSaleItems}{' '}
             </p>

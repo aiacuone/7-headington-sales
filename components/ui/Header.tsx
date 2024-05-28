@@ -20,13 +20,13 @@ export const Header = () => {
   } = useDisclosure()
   return (
     <>
-      <header className="bg-muted p-2 relative center h-[70px]">
+      <header className="bg-muted p-3 relative center h-[70px]">
         <div className="w-full max-w-screen-lg hstack">
           <div className="center">
             <p>7 Headington Rd</p>
           </div>
           <div className="flex-1 center gap-3">
-            <p className="text-xl font-bold w-full text-right sm:text-center">
+            <p className="font-bold w-full text-right sm:text-center">
               House Clearance Sale
             </p>
           </div>
