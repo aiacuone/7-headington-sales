@@ -40,16 +40,16 @@
 - circulon pot
 - wok
 
-To do:
+\*To do
 
 - Order the list items in card
 - Remaining boxes images
 - Vacuum attachments images
 - Condiments photos
 
-Reservations:
-Kettle:
-{
-name: Hamsa
-Address: 6 Headington
-}
+\*Reservations
+\*\*Kettle
+
+1. Hafsa
+   \*6 Headington
+2. Geraldine \*geraldineolusolaojo@yahoo.co.uk

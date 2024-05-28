@@ -24,7 +24,7 @@ interface CardDialogProps {
   item: Item
 }
 
-export const CardDialog: FC<CardDialogProps> = ({ open, toggle, item }) => {
+export const ItemCardDialog: FC<CardDialogProps> = ({ open, toggle, item }) => {
   const { images, name } = item
   const showCarousel = images.length > 1
 

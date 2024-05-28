@@ -40,6 +40,7 @@ export const ItemDetails: FC<ItemDetailsProps> = ({
         'name',
         'details',
         'price',
+        'reservations',
       ]
 
       return !excludeKeys.includes(key)

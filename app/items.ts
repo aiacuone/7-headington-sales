@@ -23,6 +23,7 @@ export interface Item {
   details?: string
   link?: string
   watts?: number
+  reservations?: number
 }
 ;``
 
@@ -41,6 +42,7 @@ export const items: Item[] = [
     model: 'S40008',
     details: '£15 on Amazon',
     link: 'https://www.amazon.co.uk/gp/product/B07MWDL5N6/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1',
+    isSold: true,
   },
   {
     name: 'Dremel Butane Torch',
@@ -215,6 +217,7 @@ export const items: Item[] = [
     brand: 'Tefal',
     link: 'https://shop.tefal.co.uk/jamie-oliver-by-tefal-cook-s-classics-h9129943-30cm-shallow-pan-hard-anodised?utm_source=Google&utm_medium=cpc&utm_campaign=1PxGUp_UK_TEF_CWB_PotsPans_.NSSFP_PU_SEA_SHOADS&gad_source=1&gclid=Cj0KCQjw3tCyBhDBARIsAEY0XNlsncnJL76rD4BrNYhAQd0nwCu8fm4jNczYYLvHl2wE0hvWb-iy2lUaAhuFEALw_wcB&gclsrc=aw.ds',
     details: '£80 on Tefal website',
+    isSold: true,
   },
   {
     name: 'Medium Pot',
@@ -243,7 +246,7 @@ export const items: Item[] = [
     model: 20071,
     link: 'https://www.amazon.co.uk/Russell-Hobbs-Cambridge-Kettle-20071/dp/B00D3K79O4',
     isDelayedSale: true,
-    isSold: true,
+    reservations: 1,
   },
   {
     name: 'Kenwood Hand Mixer',
