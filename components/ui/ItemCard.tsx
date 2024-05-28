@@ -41,9 +41,9 @@ export const ItemCard: FC<{
             }`}>
             SOLD
           </p>
-          {reservations && (
+          {reservations?.length && (
             <p className="absolute bg-white text-xl text-black p-3 rounded">
-              Reservations: {reservations}
+              Reservations: {reservations.length}
             </p>
           )}
         </button>

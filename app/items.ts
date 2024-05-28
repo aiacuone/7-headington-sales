@@ -7,6 +7,11 @@ export enum Category {
   other = 'other',
 }
 
+interface Reservation {
+  name: string
+  contact: string
+}
+
 export interface Item {
   name: string
   brand?: string
@@ -23,7 +28,7 @@ export interface Item {
   details?: string
   link?: string
   watts?: number
-  reservations?: number
+  reservations?: Reservation[]
 }
 ;``
 
@@ -246,7 +251,16 @@ export const items: Item[] = [
     model: 20071,
     link: 'https://www.amazon.co.uk/Russell-Hobbs-Cambridge-Kettle-20071/dp/B00D3K79O4',
     isDelayedSale: true,
-    reservations: 1,
+    reservations: [
+      {
+        name: 'Hafsa',
+        contact: '6 Headington Rd',
+      },
+      {
+        name: 'Geraldine',
+        contact: 'geraldineolusolaojo@yahoo.co.uk',
+      },
+    ],
   },
   {
     name: 'Kenwood Hand Mixer',
