@@ -46,8 +46,3 @@ To do:
 - Remaining boxes images
 - Vacuum attachments images
 - Condiments photos
-
-testing checklist:
-
-- images
-- links

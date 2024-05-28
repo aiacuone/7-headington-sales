@@ -48,7 +48,7 @@ export const ItemDetails: FC<ItemDetailsProps> = ({
 
   const mailTo = () => {
     push(
-      `mailto:aiacuone@gmail.com?subject=7 Headington Sale: ${item.name}&body=Hello, I am interested in purchasing the item: ${item.name}`
+      `mailto:aiacuone@gmail.com?subject=7 Headington Rd Sale: ${item.name}&body=Hello, I am interested in purchasing the item: ${item.name}`
     )
   }
 
@@ -94,15 +94,15 @@ export const ItemDetails: FC<ItemDetailsProps> = ({
         <div className="flex-1 w-full" />
         <div className="stack gap-1">
           <div className="hstack gap-1">
-            {showMoreDetails && (
-              <Button className="w-full" onClick={onOpen} disabled={isSold}>
-                View
-              </Button>
-            )}
             {link && (
               <Link href={link} target="_blank" className="w-full">
                 <Button className="w-full">Link</Button>
               </Link>
+            )}
+            {showMoreDetails && (
+              <Button className="w-full" onClick={onOpen} disabled={isSold}>
+                View
+              </Button>
             )}
           </div>
           <div className="hstack gap-1">
