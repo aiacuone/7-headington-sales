@@ -53,7 +53,7 @@ export const Footer = () => {
                 onClick={toggleDelayedSaleDialog}>
                 <Clock className="text-blue-500" />
               </button>
-              <p>Sales Reserved</p>
+              <p>Reserved</p>
             </div>
           </div>
           <Button onClick={toggle} className="h-10">
