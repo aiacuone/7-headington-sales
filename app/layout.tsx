@@ -10,8 +10,8 @@ import { Main } from '@/components/ui/Main'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: '7 Headington Rd',
-  description: 'Rent Guide',
+  title: 'House Clearance- 7 Headington Rd',
+  description: 'House Clearance App',
 }
 
 export default function RootLayout({

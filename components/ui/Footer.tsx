@@ -1,6 +1,6 @@
 'use client'
 
-import { Home, Menu, QrCode } from 'lucide-react'
+import { Info, Menu, QrCode } from 'lucide-react'
 import { Button } from './button'
 import { useDisclosure } from '@/lib/hooks'
 import {
@@ -17,6 +17,7 @@ import { FC } from 'react'
 import { capitalizeFirstLetter } from '@/lib/utils'
 import { Category } from '@/app/items'
 import { QrCodeDialog } from './QrCodeDialog'
+import { IntroDialog } from './IntroDialog'
 
 export const Footer = () => {
   const { isOpen, onClose, toggle } = useDisclosure()
@@ -57,43 +58,59 @@ const FooterDrawer: FC<FooterDrawerProps> = ({
   onOpenQrDialog,
 }) => {
   const { push } = useRouter()
+  const {
+    toggle: toggleIntroDialog,
+    isOpen: isIntroDialogOpen,
+    onOpen: onOpenIntroDialog,
+  } = useDisclosure()
 
   const onClickLink = (href: string) => {
     onClose()
     push(href)
   }
+
+  const onClickHome = () => {
+    onClose()
+    onOpenIntroDialog()
+  }
   return (
-    <Drawer open={isOpen}>
-      <DrawerContent onBlur={onClose}>
-        <DrawerHeader className="center">
-          <div className="w-full max-w-screen-lg">
-            <DrawerTitle>Select an option</DrawerTitle>
-            <DrawerDescription>
-              Navigate the app by selecting an option
-            </DrawerDescription>
-          </div>
-        </DrawerHeader>
-        <DrawerFooter className="center">
-          {Object.values(Category).map((category) => (
-            <Button
-              key={category}
-              onClick={() => onClickLink(`/#${category}`)}
-              className="w-[200px]">
-              {capitalizeFirstLetter(category)}
-            </Button>
-          ))}
-          <DrawerClose>
-            <div className="hstack gap-3">
-              <Button onClick={onOpenQrDialog} variant="outline">
-                <QrCode />
-              </Button>
-              <Button variant="outline" onClick={onClose}>
-                Close
-              </Button>
+    <>
+      <Drawer open={isOpen}>
+        <DrawerContent onBlur={onClose}>
+          <DrawerHeader className="center">
+            <div className="w-full max-w-screen-lg">
+              <DrawerTitle>Select an option</DrawerTitle>
+              <DrawerDescription>
+                Navigate the app by selecting an option
+              </DrawerDescription>
             </div>
-          </DrawerClose>
-        </DrawerFooter>
-      </DrawerContent>
-    </Drawer>
+          </DrawerHeader>
+          <DrawerFooter className="center">
+            {Object.values(Category).map((category) => (
+              <Button
+                key={category}
+                onClick={() => onClickLink(`/#${category}`)}
+                className="w-[200px]">
+                {capitalizeFirstLetter(category)}
+              </Button>
+            ))}
+            <DrawerClose>
+              <div className="hstack gap-3">
+                <Button onClick={onOpenQrDialog} variant="outline">
+                  <QrCode />
+                </Button>
+                <Button variant="outline" onClick={onClose}>
+                  Close
+                </Button>
+                <Button variant="outline" onClick={onClickHome}>
+                  <Info />
+                </Button>
+              </div>
+            </DrawerClose>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+      <IntroDialog open={isIntroDialogOpen} toggle={toggleIntroDialog} />
+    </>
   )
 }

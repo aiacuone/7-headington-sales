@@ -19,10 +19,12 @@ interface IntroDialogProps {
 export const IntroDialog: FC<IntroDialogProps> = ({ open, toggle }) => {
   return (
     <Dialog open={open} onOpenChange={toggle}>
-      <DialogContent className="w-full sm:w-[500px]">
+      <DialogContent className="w-full sm:w-[800px]">
         <DialogHeader>
           <DialogTitle>Welcome!</DialogTitle>
-          <DialogDescription></DialogDescription>
+          <DialogDescription>
+            7 Headington Rd is having a house clearance!
+          </DialogDescription>
         </DialogHeader>
         <DialogFooter>
           <div className="stack gap-5">
@@ -34,6 +36,12 @@ export const IntroDialog: FC<IntroDialogProps> = ({ open, toggle }) => {
               <p>
                 Please feel free to browse the items and contact us if you are
                 interested in a purchase.
+              </p>
+              <p>
+                This house clearance will officially end on the <b>June 30th</b>
+              </p>
+              <p>
+                New items are likely to be added daily, so be sure to check back
               </p>
             </div>
             <div className="center">
