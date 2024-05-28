@@ -121,6 +121,7 @@ export const items: Item[] = [
     details:
       'Please note, this air mattress deflates faster than normal. Electric, inflates and deflates electrically. Good for emergency situations',
     link: 'https://www.argos.co.uk/product/8884967?clickPR=plp:2:5',
+    isSold: true,
   },
   {
     name: 'Hakeno Pull up bar',
@@ -242,6 +243,7 @@ export const items: Item[] = [
     model: 20071,
     link: 'https://www.amazon.co.uk/Russell-Hobbs-Cambridge-Kettle-20071/dp/B00D3K79O4',
     isDelayedSale: true,
+    isSold: true,
   },
   {
     name: 'Kenwood Hand Mixer',

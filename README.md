@@ -46,3 +46,10 @@ To do:
 - Remaining boxes images
 - Vacuum attachments images
 - Condiments photos
+
+Reservations:
+Kettle:
+{
+name: Hamsa
+Address: 6 Headington
+}

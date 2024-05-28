@@ -63,7 +63,7 @@ const ItemCard: FC<{ item: Item; onOpenDelayedSaleDialog: () => void }> = ({
             height={300}
           />
           <p
-            className={`absolute bg-white text-4xl text-black rounded-sm p-3 font-bold ${
+            className={`absolute bg-white text-2xl text-black rounded-sm p-3 ${
               isSold ? 'flex' : 'hidden'
             }`}>
             SOLD

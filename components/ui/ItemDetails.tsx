@@ -106,7 +106,10 @@ export const ItemDetails: FC<ItemDetailsProps> = ({
             )}
           </div>
           <div className="hstack gap-1">
-            <Button className="bg-muted-foreground w-full" onClick={onPurchase}>
+            <Button
+              className="bg-muted-foreground w-full"
+              onClick={onPurchase}
+              disabled={isSold}>
               Inquire
             </Button>
             {showCloseButton && (
