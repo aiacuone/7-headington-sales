@@ -171,6 +171,12 @@ export const items: Item[] = [
     isDelayedSale: true,
     details: 'Foot operated, inner layer holds down lining of bin',
     price: 10,
+    reservations: [
+      {
+        name: 'Geraldine',
+        contact: 'geraldineojo@ymail.com',
+      },
+    ],
   },
   {
     name: 'Panasonic Combination Microwave Oven',
