@@ -248,6 +248,12 @@ export const items: Item[] = [
     isDelayedSale: true,
     watts: 1200,
     details: '1200W. Comes with multiple attachments and bags',
+    reservations: [
+      {
+        name: 'Sarah Brookes',
+        contact: 'sarahbrookes2022@gmail.com',
+      },
+    ],
   },
   {
     name: 'Russell Hobbs Kettle',
