@@ -15,7 +15,7 @@ import {
 import { useRouter } from 'next/navigation'
 import { FC } from 'react'
 import { capitalizeFirstLetter } from '@/lib/utils'
-import { Category } from '@/app/items'
+import { Category, items } from '@/app/items'
 import { QrCodeDialog } from './QrCodeDialog'
 import { IntroDialog } from './IntroDialog'
 
@@ -26,14 +26,21 @@ export const Footer = () => {
     isOpen: isQrDialogOpen,
     onOpen: onOpenQrDialog,
   } = useDisclosure()
+  const totalNumberOfItems = items.length
+  const numberOfItemsSold = items.filter((item) => item.isSold).length
+  const itemsRemaining = totalNumberOfItems - numberOfItemsSold
 
   return (
     <>
       <div className="p-2 bg-muted center h-[70px]">
         <div className="w-full center max-w-screen-lg">
+          <div className="flex-1"></div>
           <Button onClick={toggle} className="h-10">
             <Menu />
           </Button>
+          <div className="flex-1 justify-end flex">
+            <b>{itemsRemaining}</b>/{totalNumberOfItems} Remaining
+          </div>
         </div>
       </div>
       <FooterDrawer
