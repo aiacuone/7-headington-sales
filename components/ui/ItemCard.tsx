@@ -17,7 +17,7 @@ export const ItemCard: FC<{
     <>
       <div
         className={`stack bg-muted p-3 gap-1 ${
-          isSold ? 'opacity-30' : 'opacity-100'
+          isSold ? 'opacity-20' : 'opacity-100'
         }`}>
         <p className="font-bold text-lg">{name}</p>
         {item.price ? (
@@ -35,12 +35,6 @@ export const ItemCard: FC<{
             width={300}
             height={300}
           />
-          <p
-            className={`absolute bg-white text-2xl text-black rounded-sm p-3 ${
-              isSold ? 'flex' : 'hidden'
-            }`}>
-            Sold
-          </p>
         </button>
         {isDelayedSale && (
           <button
