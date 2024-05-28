@@ -1,6 +1,6 @@
 'use client'
 
-import { Info, Menu, QrCode } from 'lucide-react'
+import { Clock, Info, Menu, QrCode } from 'lucide-react'
 import { Button } from './button'
 import { useDisclosure } from '@/lib/hooks'
 import {
@@ -18,28 +18,49 @@ import { capitalizeFirstLetter } from '@/lib/utils'
 import { Category, items } from '@/app/items'
 import { QrCodeDialog } from './QrCodeDialog'
 import { IntroDialog } from './IntroDialog'
+import { DelayedSaleDialog } from './DelayedSaleDialog'
 
 export const Footer = () => {
   const { isOpen, onClose, toggle } = useDisclosure()
+  const { isOpen: isDelayedSaleDialogOpen, toggle: toggleDelayedSaleDialog } =
+    useDisclosure()
   const {
     toggle: toggledQrDialog,
     isOpen: isQrDialogOpen,
     onOpen: onOpenQrDialog,
   } = useDisclosure()
   const totalNumberOfItems = items.length
+
   const numberOfItemsSold = items.filter((item) => item.isSold).length
-  const itemsRemaining = totalNumberOfItems - numberOfItemsSold
+  const numberOfItemsNotSold = totalNumberOfItems - numberOfItemsSold
+
+  const numberOfItemsReserved = items.filter((item) => item.reservations).length
+  const numberOfDelayedSaleItems = items.filter(
+    (item) => item.isDelayedSale
+  ).length
 
   return (
     <>
       <div className="p-2 bg-muted center h-[70px]">
         <div className="w-full center max-w-screen-lg">
-          <div className="flex-1"></div>
+          <div className="flex-1 hstack gap-2">
+            <p>
+              <b>{numberOfItemsReserved}</b>/{numberOfDelayedSaleItems}{' '}
+            </p>
+            <div className="hstack gap-1">
+              <button
+                className="hstack gap-2 items-center text-sm"
+                onClick={toggleDelayedSaleDialog}>
+                <Clock className="text-blue-500" />
+              </button>
+              <p>Sales Reserved</p>
+            </div>
+          </div>
           <Button onClick={toggle} className="h-10">
             <Menu />
           </Button>
           <div className="flex-1 justify-end flex">
-            <b>{itemsRemaining}</b>/{totalNumberOfItems} Remaining
+            <b>{numberOfItemsNotSold}</b>/{totalNumberOfItems} Remaining
           </div>
         </div>
       </div>
@@ -49,6 +70,10 @@ export const Footer = () => {
         onOpenQrDialog={onOpenQrDialog}
       />
       <QrCodeDialog toggle={toggledQrDialog} open={isQrDialogOpen} />
+      <DelayedSaleDialog
+        open={isDelayedSaleDialogOpen}
+        toggle={toggleDelayedSaleDialog}
+      />
     </>
   )
 }
