@@ -70,10 +70,11 @@ export const ItemDetails: FC<ItemDetailsProps> = ({
         <ul className="w-full">
           {Object.entries(mappingDetails).map(([key, value], index) => {
             const keySuffix = {
-              width: (value: number) => `${value}mm`,
-              height: (value: number) => `${value}mm`,
-              watts: (value: number) => `${value}W`,
-              reservations: (value: Reservation[]) => `${value.length}`,
+              width: (width: number) => `${width}mm`,
+              height: (height: number) => `${height}mm`,
+              watts: (watts: number) => `${watts}W`,
+              reservations: (reservations: Reservation[]) =>
+                `${reservations.length}`,
             }
 
             return (

@@ -177,6 +177,7 @@ export const items: Item[] = [
         contact: 'geraldineojo@ymail.com',
       },
     ],
+    link: 'https://www.simplehuman.co.uk/products/rectangular-liner-pocket-step-can-plastic-45l?variant=32718183694441',
   },
   {
     name: 'Panasonic Combination Microwave Oven',
