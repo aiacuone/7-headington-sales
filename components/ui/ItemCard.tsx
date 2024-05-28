@@ -39,7 +39,7 @@ export const ItemCard: FC<{
             className={`absolute bg-white text-2xl text-black rounded-sm p-3 ${
               isSold ? 'flex' : 'hidden'
             }`}>
-            SOLD
+            Sold
           </p>
           {reservations?.length && (
             <p className="absolute bg-white text-xl text-black p-3 rounded">
