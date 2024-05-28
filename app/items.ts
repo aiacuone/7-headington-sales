@@ -7,7 +7,7 @@ export enum Category {
   other = 'other',
 }
 
-interface Reservation {
+export interface Reservation {
   name: string
   contact: string
 }

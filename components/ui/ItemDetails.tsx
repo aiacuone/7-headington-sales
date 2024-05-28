@@ -1,7 +1,7 @@
 import { capitalizeFirstLetter } from '@/lib/utils'
 import { Button } from './button'
 import Link from 'next/link'
-import { Item } from '@/app/items'
+import { Item, Reservation } from '@/app/items'
 import { FC } from 'react'
 import { useDisclosure } from '@/lib/hooks'
 import { DelayedSaleDialog } from './DelayedSaleDialog'
@@ -40,7 +40,6 @@ export const ItemDetails: FC<ItemDetailsProps> = ({
         'name',
         'details',
         'price',
-        'reservations',
       ]
 
       return !excludeKeys.includes(key)
@@ -74,6 +73,7 @@ export const ItemDetails: FC<ItemDetailsProps> = ({
               width: (value: number) => `${value}mm`,
               height: (value: number) => `${value}mm`,
               watts: (value: number) => `${value}W`,
+              reservations: (value: Reservation[]) => `${value.length}`,
             }
 
             return (
