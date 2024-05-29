@@ -1,6 +1,6 @@
 'use client'
 
-import { Clock, Info, Menu, QrCode } from 'lucide-react'
+import { Info, Menu, QrCode } from 'lucide-react'
 import { Button } from './button'
 import { useDisclosure } from '@/lib/hooks'
 import {
@@ -15,53 +15,27 @@ import {
 import { useRouter } from 'next/navigation'
 import { FC } from 'react'
 import { capitalizeFirstLetter } from '@/lib/utils'
-import { Category, items } from '@/app/items'
+import { Category } from '@/app/items'
 import { QrCodeDialog } from './QrCodeDialog'
-import { IntroDialog } from './IntroDialog'
-import { DelayedSaleDialog } from './DelayedSaleDialog'
+import { InfoDialog } from './InfoDialog'
 
 export const Footer = () => {
   const { isOpen, onClose, toggle } = useDisclosure()
-  const { isOpen: isDelayedSaleDialogOpen, toggle: toggleDelayedSaleDialog } =
-    useDisclosure()
   const {
     toggle: toggledQrDialog,
     isOpen: isQrDialogOpen,
     onOpen: onOpenQrDialog,
   } = useDisclosure()
-  const totalNumberOfItems = items.length
-
-  const numberOfItemsSold = items.filter((item) => item.isSold).length
-  const numberOfItemsNotSold = totalNumberOfItems - numberOfItemsSold
-
-  const numberOfItemsReserved = items.filter((item) => item.reservations).length
-  const numberOfDelayedSaleItems = items.filter(
-    (item) => item.isDelayedSale
-  ).length
 
   return (
     <>
       <div className="p-3 bg-muted center h-[70px]">
         <div className="w-full center max-w-screen-lg text-sm">
-          <div className="flex-1 hstack gap-1">
-            <p>
-              <b>{numberOfItemsReserved}</b>/{numberOfDelayedSaleItems}{' '}
-            </p>
-            <div className="hstack gap-1">
-              <button
-                className="hstack gap-2 items-center text-sm"
-                onClick={toggleDelayedSaleDialog}>
-                <Clock className="text-blue-500" />
-              </button>
-              <p>Reserved</p>
-            </div>
-          </div>
+          <div className="flex-1 hstack gap-1"></div>
           <Button onClick={toggle} className="h-10">
             <Menu />
           </Button>
-          <div className="flex-1 justify-end flex">
-            <b>{numberOfItemsNotSold}</b>/{totalNumberOfItems} Remaining
-          </div>
+          <div className="flex-1 justify-end flex"></div>
         </div>
       </div>
       <FooterDrawer
@@ -70,10 +44,6 @@ export const Footer = () => {
         onOpenQrDialog={onOpenQrDialog}
       />
       <QrCodeDialog toggle={toggledQrDialog} open={isQrDialogOpen} />
-      <DelayedSaleDialog
-        open={isDelayedSaleDialogOpen}
-        toggle={toggleDelayedSaleDialog}
-      />
     </>
   )
 }
@@ -91,9 +61,9 @@ const FooterDrawer: FC<FooterDrawerProps> = ({
 }) => {
   const { push } = useRouter()
   const {
-    toggle: toggleIntroDialog,
-    isOpen: isIntroDialogOpen,
-    onOpen: onOpenIntroDialog,
+    toggle: toggleInfoDialog,
+    isOpen: isInfoDialogOpen,
+    onOpen: onOpenInfoDialog,
   } = useDisclosure()
 
   const onClickLink = (href: string) => {
@@ -103,7 +73,7 @@ const FooterDrawer: FC<FooterDrawerProps> = ({
 
   const onClickHome = () => {
     onClose()
-    onOpenIntroDialog()
+    onOpenInfoDialog()
   }
   return (
     <>
@@ -142,7 +112,7 @@ const FooterDrawer: FC<FooterDrawerProps> = ({
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
-      <IntroDialog open={isIntroDialogOpen} toggle={toggleIntroDialog} />
+      <InfoDialog open={isInfoDialogOpen} toggle={toggleInfoDialog} />
     </>
   )
 }

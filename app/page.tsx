@@ -5,7 +5,7 @@ import { Category, items } from './items'
 import { capitalizeFirstLetter } from '@/lib/utils'
 import { useEffect } from 'react'
 import { useDisclosure } from '@/lib/hooks'
-import { IntroDialog } from '@/components/ui/IntroDialog'
+import { InfoDialog } from '@/components/ui/InfoDialog'
 
 export default function Home() {
   const { isOpen: open, toggle, onOpen } = useDisclosure()
@@ -36,7 +36,7 @@ export default function Home() {
           )
         })}
       </div>
-      <IntroDialog open={open} toggle={_toggle} />
+      <InfoDialog open={open} toggle={_toggle} />
     </>
   )
 }

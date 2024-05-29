@@ -5,7 +5,7 @@ import { ModeToggle } from '../ModeToggle'
 import { Button } from './button'
 import { QrCodeDialog } from './QrCodeDialog'
 import { useDisclosure } from '@/lib/hooks'
-import { IntroDialog } from './IntroDialog'
+import { InfoDialog } from './InfoDialog'
 
 export const Header = () => {
   const {
@@ -14,9 +14,9 @@ export const Header = () => {
     onOpen: onOpenQrDialog,
   } = useDisclosure()
   const {
-    toggle: toggleIntroDialog,
-    isOpen: isIntroDialogOpen,
-    onOpen: onOpenIntroDialog,
+    toggle: toggleInfoDialog,
+    isOpen: isInfoDialogOpen,
+    onOpen: onOpenInfoDialog,
   } = useDisclosure()
   return (
     <>
@@ -31,7 +31,7 @@ export const Header = () => {
             </p>
           </div>
           <div className="gap-3 hidden sm:flex">
-            <Button onClick={onOpenIntroDialog}>
+            <Button onClick={onOpenInfoDialog}>
               <Info />
             </Button>
             <Button onClick={onOpenQrDialog}>
@@ -42,7 +42,7 @@ export const Header = () => {
         </div>
       </header>
       <QrCodeDialog toggle={toggleQrDialog} open={isQrDialogOpen} />
-      <IntroDialog open={isIntroDialogOpen} toggle={toggleIntroDialog} />
+      <InfoDialog open={isInfoDialogOpen} toggle={toggleInfoDialog} />
     </>
   )
 }

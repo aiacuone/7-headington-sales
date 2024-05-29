@@ -65,7 +65,7 @@ export const items: Item[] = [
     category: Category.baby,
     brand: 'Tutti Bambini',
     model: 'Rio',
-    price: 140,
+    price: 150,
     details: 'NEVER used, plastic still on mattress',
     link: 'https://www.tuttibambini.com/rio-cot-bed-with-cot-top-changer-mattress-slate-oak.html',
   },
@@ -105,6 +105,13 @@ export const items: Item[] = [
       'Very good condition, used once. £27 EACH on Amazon. One of the bags is missing',
     link: 'https://www.amazon.co.uk/gp/product/B00BIBBDHO/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1',
     isSold: true,
+    reservations: [
+      { name: 'Alex', contact: 'jillesalex@yahoo.co.uk' },
+      {
+        name: 'Sarah',
+        contact: '07951842703',
+      },
+    ],
   },
   {
     name: 'Hoppa Lightweight Shopping Trolley',
