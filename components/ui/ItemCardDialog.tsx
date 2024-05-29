@@ -25,7 +25,7 @@ interface CardDialogProps {
 }
 
 export const ItemCardDialog: FC<CardDialogProps> = ({ open, toggle, item }) => {
-  const { images, name } = item
+  const { images, name, price } = item
   const showCarousel = images.length > 1
 
   return (
@@ -54,7 +54,10 @@ export const ItemCardDialog: FC<CardDialogProps> = ({ open, toggle, item }) => {
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
-          <ItemDetails item={item} toggleDialog={toggle} />
+          <div className="stack gap-2 w-full">
+            {price && <p className="text-lg">{`£${price}`}</p>}
+            <ItemDetails item={item} toggleDialog={toggle} />
+          </div>
         </DialogFooter>
       </DialogContent>
     </Dialog>

@@ -10,10 +10,7 @@ import {
 } from '@/components/ui/dialog'
 import { FC } from 'react'
 import { Button } from './button'
-import { items } from '@/app/items'
-import { DelayedSaleDialog } from './DelayedSaleDialog'
-import { useDisclosure } from '@/lib/hooks'
-import { Clock } from 'lucide-react'
+import { ItemColumns } from './ItemColumns'
 
 interface IntroDialogProps {
   open: boolean
@@ -21,13 +18,6 @@ interface IntroDialogProps {
 }
 
 export const InfoDialog: FC<IntroDialogProps> = ({ open, toggle }) => {
-  const { isOpen: isDelayedSaleDialogOpen, toggle: toggleDelayedSaleDialog } =
-    useDisclosure()
-
-  const onClickDelayedSaleButton = () => {
-    toggle()
-    toggleDelayedSaleDialog()
-  }
   return (
     <>
       <Dialog open={open} onOpenChange={toggle}>
@@ -60,10 +50,10 @@ export const InfoDialog: FC<IntroDialogProps> = ({ open, toggle }) => {
                 </p>
               </div>
               <div>
-                <p className="text-lg font-semibold text-center">Items</p>
-                <ItemColumns
-                  onClickDelayedSaleButton={onClickDelayedSaleButton}
-                />
+                <p className="text-lg font-semibold text-center sm:text-left">
+                  Items
+                </p>
+                <ItemColumns />
               </div>
               <div className="center">
                 <Button onClick={toggle}>Continue</Button>
@@ -72,86 +62,6 @@ export const InfoDialog: FC<IntroDialogProps> = ({ open, toggle }) => {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-      <DelayedSaleDialog
-        open={isDelayedSaleDialogOpen}
-        toggle={toggleDelayedSaleDialog}
-      />
     </>
-  )
-}
-
-interface ItemColumnsProps {
-  onClickDelayedSaleButton: () => void
-}
-
-const ItemColumns: FC<ItemColumnsProps> = ({ onClickDelayedSaleButton }) => {
-  const numberOfDelayedSaleItemsNotReserved = items.filter(
-    (item) => !item.reservations && item.isDelayedSale
-  ).length
-  const numberOfDelayedSaleItems = items.filter(
-    (item) => item.isDelayedSale
-  ).length
-
-  const DelayedSaleNode = (
-    <div className="hstack gap-1" key="">
-      <button
-        className="hstack gap-2 items-center text-sm"
-        onClick={onClickDelayedSaleButton}>
-        <Clock className="text-blue-500" size="20px" />
-      </button>
-      <p>Delayed Sales without Reservation</p>
-    </div>
-  )
-
-  const numberOfFreeItems = items.filter((item) => !item.price).length
-  const numberOfFreeItemsThatAreNotSold = items.filter(
-    (item) => !item.price && !item.isSold
-  ).length
-
-  const totalPricedItems = items.filter((item) => item.price).length
-  const totalPricedItemsNotSold = items.filter(
-    (item) => item.price && !item.isSold
-  ).length
-
-  const FreeItemsNode = (
-    <div className="hstack gap-1">
-      <p className="bg-blue-500 text-white px-2 rounded-sm">Free Items</p>
-      <p>Remaining</p>
-    </div>
-  )
-
-  const itemColumnValues = [
-    [numberOfFreeItemsThatAreNotSold, numberOfFreeItems, FreeItemsNode],
-    [
-      numberOfDelayedSaleItemsNotReserved,
-      numberOfDelayedSaleItems,
-      DelayedSaleNode,
-    ],
-    [totalPricedItemsNotSold, totalPricedItems, 'Priced Items Remaining'],
-  ]
-
-  return (
-    <div className="hstack w-full gap-2">
-      <div className="stack text-right gap-1">
-        {itemColumnValues.map((value, index) => {
-          return (
-            <div key={index}>
-              <p>
-                <b>{value[0]}</b>/{value[1]}:
-              </p>
-            </div>
-          )
-        })}
-      </div>
-      <div className="stack gap-1">
-        {itemColumnValues.map((value, index) => {
-          return (
-            <div key={index}>
-              <div className="hstack gap-1">{value[2]}</div>
-            </div>
-          )
-        })}
-      </div>
-    </div>
   )
 }

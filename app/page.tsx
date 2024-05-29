@@ -6,6 +6,7 @@ import { capitalizeFirstLetter } from '@/lib/utils'
 import { useEffect } from 'react'
 import { useDisclosure } from '@/lib/hooks'
 import { InfoDialog } from '@/components/ui/InfoDialog'
+import { ItemColumns } from '@/components/ui/ItemColumns'
 
 export default function Home() {
   const { isOpen: open, toggle, onOpen } = useDisclosure()
@@ -23,6 +24,9 @@ export default function Home() {
   return (
     <>
       <div className="stack gap-10">
+        <div className="stack gap-1">
+          <ItemColumns />
+        </div>
         {Object.values(Category).map((category) => {
           return (
             <div key={category} className="stack gap-5">

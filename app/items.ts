@@ -398,4 +398,17 @@ export const items: Item[] = [
     images: s3Urls(['wok1', 'wok2']),
     isSold: true,
   },
+  {
+    name: 'Vileda Mop',
+    category: Category.other,
+    brand: 'Vileda',
+    images: s3Urls(['mop1', 'mop2', 'mop3']),
+    isDelayedSale: true,
+    price: 15,
+    link: 'https://www.amazon.co.uk/gp/product/B01HTTQ6A2/ref=ppx_yo_dt_b_search_asin_image?ie=UTF8&th=1',
+    details: '£35 on Amazon. Very good condition. Foot operated, spins to dry',
+    height: 485,
+    width: 274,
+    depth: 279,
+  },
 ]
