@@ -193,6 +193,10 @@ export const items: Item[] = [
         name: 'Sarah',
         contact: '07951842703',
       },
+      {
+        name: 'Shashank Jha',
+        contact: 'shashank.jha@gmail.com',
+      },
     ],
     link: 'https://www.simplehuman.co.uk/products/rectangular-liner-pocket-step-can-plastic-45l?variant=32718183694441',
   },
@@ -359,6 +363,7 @@ export const items: Item[] = [
     category: Category.kitchen,
     images: s3Urls(['baking-trays1', 'baking-trays2', 'baking-trays3']),
     details: '3x shallow, 1x deep',
+    isSold: true,
   },
   {
     name: 'Mastertop Cake Stand',
