@@ -67,7 +67,7 @@ export const ItemCardDialog: FC<CardDialogProps> = ({ open, toggle, item }) => {
 const DialogImage: FC<{ src: string }> = ({ src }) => {
   return (
     <div className="center">
-      <Image src={src} alt={'House Item Image'} width={500} height={300} />
+      <Image src={src} alt={'House Item Image'} width={280} height={250} />
     </div>
   )
 }
