@@ -1,14 +1,9 @@
 import { items } from '@/app/items'
-import { useDisclosure } from '@/lib/hooks'
 import { FC } from 'react'
-import { DelayedSaleDialog } from './DelayedSaleDialog'
 
 interface ItemColumnsProps {}
 
 export const ItemColumns: FC<ItemColumnsProps> = () => {
-  const { isOpen: isDelayedSaleDialogOpen, toggle: toggleDelayedSaleDialog } =
-    useDisclosure()
-
   const numberOfFreeItems = items.filter((item) => !item.price).length
   const numberOfFreeItemsThatAreNotSold = items.filter(
     (item) => !item.price && !item.isSold
@@ -32,33 +27,27 @@ export const ItemColumns: FC<ItemColumnsProps> = () => {
   ]
 
   return (
-    <>
-      <div className="hstack w-full gap-2 text-sm">
-        <div className="stack text-right gap-1">
-          {itemColumnValues.map((value, index) => {
-            return (
-              <div key={index}>
-                <p>
-                  <b>{value[0]}</b>/{value[1]}:
-                </p>
-              </div>
-            )
-          })}
-        </div>
-        <div className="stack gap-1">
-          {itemColumnValues.map((value, index) => {
-            return (
-              <div key={index}>
-                <div className="hstack gap-1">{value[2]}</div>
-              </div>
-            )
-          })}
-        </div>
+    <div className="hstack w-full gap-2 text-sm">
+      <div className="stack text-right gap-1">
+        {itemColumnValues.map((value, index) => {
+          return (
+            <div key={index}>
+              <p>
+                <b>{value[0]}</b>/{value[1]}:
+              </p>
+            </div>
+          )
+        })}
       </div>
-      <DelayedSaleDialog
-        open={isDelayedSaleDialogOpen}
-        toggle={toggleDelayedSaleDialog}
-      />
-    </>
+      <div className="stack gap-1">
+        {itemColumnValues.map((value, index) => {
+          return (
+            <div key={index}>
+              <div className="hstack gap-1">{value[2]}</div>
+            </div>
+          )
+        })}
+      </div>
+    </div>
   )
 }

@@ -173,6 +173,7 @@ export const items: Item[] = [
     details:
       'Very good condition, rarely used. Was originally bought for my mother when she visits, she visited once',
     link: 'https://uk.russellhobbs.com/adventure-two-slice-toaster-24080',
+    isSold: true,
   },
   {
     name: 'Simplehuman Bin',
