@@ -10,7 +10,7 @@ import { Main } from '@/components/ui/Main'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'House Clearance- 7 Headington Rd',
+  title: 'House Clearance DA101FZ',
   description: 'House Clearance App',
 }
 

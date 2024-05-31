@@ -25,7 +25,7 @@ export const InfoDialog: FC<IntroDialogProps> = ({ open, toggle }) => {
           <DialogHeader>
             <DialogTitle>Welcome!</DialogTitle>
             <DialogDescription>
-              7 Headington Rd is having a house clearance!
+              We are in DA101FZ, and are having a house clearance!
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>

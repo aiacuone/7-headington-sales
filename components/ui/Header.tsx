@@ -23,7 +23,7 @@ export const Header = () => {
       <header className="bg-muted p-3 relative center h-[70px]">
         <div className="w-full max-w-screen-lg hstack">
           <div className="center">
-            <p>7 Headington Rd</p>
+            <p>DA101FZ</p>
           </div>
           <div className="flex-1 center gap-3">
             <p className="font-bold w-full text-right sm:text-center">
