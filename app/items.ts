@@ -352,6 +352,7 @@ export const items: Item[] = [
     model: 'Washington Collection',
     details: 'New, never used. Good for a gift. 6x Whiskey glasses,',
     price: 10,
+    reservations: [{ name: 'jillesalex', contact: 'jillesalex@yahoo.co.uk' }],
   },
   {
     name: 'Pot and pan divider',

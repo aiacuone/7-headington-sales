@@ -48,7 +48,7 @@ export const ItemDetails: FC<ItemDetailsProps> = ({
 
   const mailTo = () => {
     push(
-      `mailto:aiacuone@gmail.com?subject=7 DA101FZ Sale: ${item.name}&body=Hello, I am interested in purchasing the item: ${item.name}`
+      `mailto:aiacuone@gmail.com?subject=DA101FZ Sale: ${item.name}&body=Hello, I am interested in purchasing the item: ${item.name}`
     )
   }
 
