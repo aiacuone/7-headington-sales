@@ -162,6 +162,7 @@ export const items: Item[] = [
     details:
       'Very good condition. Note, to lift seat up, you need to manually pull the seat up rather than pull lever',
     link: 'https://www.amazon.co.uk/gp/product/B08D9HKS9L/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1',
+    isSold: true,
   },
   {
     name: 'Russell Hobbs Toaster',
@@ -353,6 +354,7 @@ export const items: Item[] = [
     details: 'New, never used. Good for a gift. 6x Whiskey glasses,',
     price: 10,
     reservations: [{ name: 'jillesalex', contact: 'jillesalex@yahoo.co.uk' }],
+    isSold: true,
   },
   {
     name: 'Pot and pan divider',

@@ -1,7 +1,7 @@
 'use client'
 
 import { ItemGrid } from '@/components/ui/ItemGrid'
-import { Category, items } from './items'
+import { Category, Item, items } from './items'
 import { capitalizeFirstLetter } from '@/lib/utils'
 import { useEffect } from 'react'
 import { useDisclosure } from '@/lib/hooks'
@@ -21,6 +21,12 @@ export default function Home() {
     toggle()
   }
 
+  const areAllItemsSold = (items: Item[]) =>
+    items.filter((item) => !item.isSold).length === 0
+
+  const allItemsThatAreSold = items.filter((item) => item.isSold)
+  console.log({ allItemsThatAreSold })
+
   return (
     <>
       <div className="stack gap-10">
@@ -28,17 +34,27 @@ export default function Home() {
           <ItemColumns />
         </div>
         {Object.values(Category).map((category) => {
+          const categoryItems = items.filter(
+            (item) => item.category === category
+          )
+
+          if (areAllItemsSold(categoryItems)) return null
+
           return (
             <div key={category} className="stack gap-5">
               <p className="text-2xl font-bold" id={category}>
                 {capitalizeFirstLetter(category)}
               </p>
-              <ItemGrid
-                items={items.filter((item) => item.category === category)}
-              />
+              <ItemGrid items={categoryItems} />
             </div>
           )
         })}
+        <div className="stack gap-5">
+          <p className="text-2xl font-bold" id={'sold'}>
+            Sold
+          </p>
+          <ItemGrid items={allItemsThatAreSold} showSoldItems />
+        </div>
       </div>
       <InfoDialog open={open} toggle={_toggle} />
     </>
