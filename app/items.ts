@@ -56,7 +56,7 @@ export const items: Item[] = [
     brand: 'Dremel',
     details:
       'Dremel versatip butane gas torch. £65 at screwfix. Comes with a bottle of butane around 1/4-1/2 left. Works as expected',
-    price: 25,
+    price: 20,
     link: 'https://www.screwfix.com/p/dremel-versatip-butane-gas-torch/1596d',
   },
   {
@@ -84,14 +84,14 @@ export const items: Item[] = [
     name: 'Baby Rocker',
     images: s3Urls(['rocker1', 'rocker2']),
     category: Category.baby,
-    price: 10,
+    price: 5,
   },
   {
     name: 'Flip down ironing Board',
     images: s3Urls(['ironing-board1', 'ironing-board2']),
     category: Category.other,
     brand: 'Dunelm',
-    price: 15,
+    price: 10,
     details: 'Brand new, never used, still in box. £36 new',
     link: 'https://www.dunelm.com/product/flip-down-ironing-board-over-the-door-1000187473?defaultSkuId=30734653&utm_source=google&utm_medium=cpc&utm_campaign=Utility_Ironing+Boards_%5BGOO-PLA+PSB-HOMEHYGIENE-IRONINGBOARD%5D&gad_source=1&gclid=Cj0KCQjw3tCyBhDBARIsAEY0XNkfkMHsae1VOrknzMLYcf4J3Ngx1Fx-GxfRy1UfwSPcSFT10G7L2P4aAtmGEALw_wcB&gclsrc=aw.ds',
   },
@@ -148,7 +148,7 @@ export const items: Item[] = [
     images: s3Urls(['pullup-bar1', 'pullup-bar2']),
     category: Category.fitness,
     brand: 'Hakeno',
-    price: 25,
+    price: 20,
     details:
       'Very good condition, rarely used. £45 on Amazon. Hangs on to frame of door, supports a very large amount of weight',
     link: 'https://www.amazon.co.uk/gp/product/B08CX8534T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1',
@@ -244,9 +244,9 @@ export const items: Item[] = [
     brand: 'Our Place',
     hob: 'Induction',
     width: 280,
-    price: 70,
+    price: 60,
     details:
-      'Contains Always Pot 2.0, Perfect Pot. Very good condition, rarely used',
+      'Contains Always Pot 2.0, steamer, wooden spoon. Very good condition, rarely used',
     link: 'https://fromourplace.co.uk/products/always-essential-cooking-pan?variant=42608736993457',
   },
   {
@@ -395,7 +395,7 @@ export const items: Item[] = [
     details:
       'Very good condition, rarely used. Comes with Perfect Pot Roast Rack',
     link: 'https://fromourplace.co.uk/products/perfect-pot?variant=40485861884081',
-    price: 50,
+    price: 40,
   },
   {
     name: 'Circulon Pot',
