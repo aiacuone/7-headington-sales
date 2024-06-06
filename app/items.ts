@@ -10,6 +10,7 @@ export enum Category {
 export interface Reservation {
   name: string
   contact: string
+  isPaid?: boolean
 }
 
 export interface Item {
@@ -85,6 +86,7 @@ export const items: Item[] = [
     images: s3Urls(['rocker1', 'rocker2']),
     category: Category.baby,
     price: 5,
+    isSold: true,
   },
   {
     name: 'Flip down ironing Board',
@@ -423,5 +425,9 @@ export const items: Item[] = [
     height: 485,
     width: 274,
     depth: 279,
+    reservations: [
+      { name: 'David', contact: 'whatsapp 07538400741', isPaid: true },
+    ],
+    isSold: true,
   },
 ]
