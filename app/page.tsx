@@ -25,7 +25,6 @@ export default function Home() {
     items.filter((item) => !item.isSold).length === 0
 
   const allItemsThatAreSold = items.filter((item) => item.isSold)
-  console.log({ allItemsThatAreSold })
 
   return (
     <>

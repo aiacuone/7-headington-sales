@@ -59,6 +59,7 @@ export const items: Item[] = [
       'Dremel versatip butane gas torch. £65 at screwfix. Comes with a bottle of butane around 1/4-1/2 left. Works as expected',
     price: 20,
     link: 'https://www.screwfix.com/p/dremel-versatip-butane-gas-torch/1596d',
+    isSold: true,
   },
   {
     name: 'Tutti Bambini Cot',
