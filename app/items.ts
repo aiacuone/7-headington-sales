@@ -192,6 +192,7 @@ export const items: Item[] = [
       {
         name: 'Geraldine',
         contact: 'geraldineojo@ymail.com',
+        isPaid: true,
       },
       {
         name: 'Sarah',
@@ -203,6 +204,7 @@ export const items: Item[] = [
       },
     ],
     link: 'https://www.simplehuman.co.uk/products/rectangular-liner-pocket-step-can-plastic-45l?variant=32718183694441',
+    isSold: true,
   },
   {
     name: 'Panasonic Combination Microwave Oven',
@@ -286,6 +288,7 @@ export const items: Item[] = [
       {
         name: 'Sarah Brookes',
         contact: 'sarahbrookes2022@gmail.com',
+        isPaid: true,
       },
       {
         name: 'Sarah',
@@ -296,6 +299,7 @@ export const items: Item[] = [
         contact: 'Whatsapp',
       },
     ],
+    isSold: true,
   },
   {
     name: 'Russell Hobbs Kettle',
