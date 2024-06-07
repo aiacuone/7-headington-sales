@@ -222,8 +222,10 @@ export const items: Item[] = [
       {
         name: 'Sarah',
         contact: '07951842703',
+        isPaid: true,
       },
     ],
+    isSold: true,
   },
   {
     name: 'Brita Water Filter',
