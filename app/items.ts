@@ -325,6 +325,7 @@ export const items: Item[] = [
         contact: '07951842703',
       },
     ],
+    isSold: true,
   },
   {
     name: 'Kenwood Hand Mixer',
